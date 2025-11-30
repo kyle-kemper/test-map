@@ -22,6 +22,7 @@
         html, body { height: 100%; margin: 0; padding: 0; }
         body { font-family: Arial, sans-serif; }
         #map { height: 80vh; width: 100%; }
+
         #filters {
             display: flex;
             flex-wrap: wrap;
@@ -30,27 +31,34 @@
             margin-bottom: 8px;
             background: #f4f4f4;
         }
+
         .filter-item {
             flex: 0 0 auto;
             margin-right: 15px;
             display: inline-flex;
             align-items: center;
-            font-size: 16px; /* base size for desktop */
-        }
-        .filter-item img { width: 20px; height: 20px; margin-left: 4px; margin-right: 4px; }
 
-        /* Mobile scaling */
-        @media (max-width: 480px) {
+            /* Font scales between 14px (small) and 20px (large) based on viewport width */
+            font-size: clamp(14px, 2vw, 20px);
+        }
+
+        .filter-item img {
+            /* Icon scales smoothly between 20px and 40px */
+            width: clamp(20px, 4vw, 40px);
+            height: clamp(20px, 4vw, 40px);
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+
+        /* Optional: scale map height slightly on small devices */
+        @media (max-width: 768px) {
             #map { height: 70vh; }
-            #filters { font-size: 18px; }
-            .filter-item { font-size: 18px; }
-            .filter-item img { width: 30px; height: 30px; } /* bigger icons for mobile */
         }
     </style>
 </head>
 <body>
 
-<h2>CaniX Locations Map v3</h2>
+<h2>CaniX Locations Map v4</h2>
 
 <div id="filters">
     <strong>Categories:</strong> <span id="filter-controls"></span>

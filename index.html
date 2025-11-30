@@ -94,7 +94,7 @@
 </head>
 <body>
 
-<h2>CaniX Locations Map v6</h2>
+<h2>CaniX Locations Map v7</h2>
 
 <div id="filters">
     <strong>Categories:</strong> <span id="filter-controls"></span>
@@ -126,16 +126,18 @@
             default: url = "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png";
         }
 
+        // Determine icon size based on viewport width
+        let size = window.innerWidth <= 480 ? 60 : 30; // 60px on phones, 30px on desktop
+
         return new L.Icon({
             iconUrl: url,
-            iconSize: [30, 30],
-            iconAnchor: [15, 30],
-            popupAnchor: [0, -30],
+            iconSize: [size, size],
+            iconAnchor: [size/2, size],
+            popupAnchor: [0, -size],
             shadowUrl: null
         });
     }
-
-    const categoryLayers = {}; // category → cluster group
+        const categoryLayers = {}; // category → cluster group
     const categoryIcons = {};  // store icons by category
     const allMarkers = [];
 

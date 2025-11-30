@@ -18,103 +18,34 @@
     <!-- PapaParse for CSV -->
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
- <style>
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Map container */
-#map {
-    height: 80vh;
-    width: 100%;
-}
-
-/* Filters container */
-#filters {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-x: auto;
-    padding: 12px;
-    margin-bottom: 10px;
-    background: #f4f4f4;
-}
-
-/* Each filter item */
-.filter-item {
-    flex: 0 0 auto;
-    display: inline-flex;
-    align-items: center;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    font-size: clamp(18px, 5vw, 28px); /* big on phones, reasonable on desktop */
-}
-
-/* Filter icons */
-.filter-item img {
-    width: clamp(40px, 8vw, 60px);
-    height: clamp(40px, 8vw, 60px);
-    margin: 0 6px;
-}
-
-/* Inputs and buttons scaling */
-#filters input[type="checkbox"],
-#filters input[type="date"],
-#filters button {
-    transform: scale(2);       /* base size desktop */
-    margin: 8px 10px;
-    cursor: pointer;
-}
-
-/* Leaflet popups */
-.leaflet-popup-content {
-    font-size: clamp(16px, 4vw, 24px); /* readable text on phones */
-    line-height: 1.5;
-}
-
-.leaflet-popup-content-wrapper {
-    padding: clamp(10px, 3vw, 20px);
-}
-
-.leaflet-popup-close-button {
-    width: clamp(20px, 4vw, 30px);
-    height: clamp(20px, 4vw, 30px);
-    font-size: clamp(14px, 3vw, 22px);
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    #map { height: 75vh; }
-
-    #filters input[type="checkbox"],
-    #filters input[type="date"],
-    #filters button {
-        transform: scale(2.5);   /* really big for touch screens */
-        margin: 10px 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    #map { height: 70vh; }
-
-    .filter-item {
-        font-size: clamp(20px, 6vw, 30px); /* even bigger for small phones */
-    }
-
-    .filter-item img {
-        width: clamp(50px, 10vw, 70px);
-        height: clamp(50px, 10vw, 70px);
-    }
-}
-</style>
-
-
+    <style>
+        html, body { height: 100%; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; }
+        #map { height: 80vh; width: 100%; }
+        #filters {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        padding: 10px;
+        margin-bottom: 8px;
+        background: #f4f4f4;
+        }
+        .filter-item {
+        flex: 0 0 auto;
+        margin-right: 15px;
+        display: inline-flex;
+        align-items: center;
+        }
+        .filter-item img { width: 20px; height: 20px; margin-left: 4px; margin-right: 4px; }
+        @media (max-width: 480px) {
+        #map { height: 70vh; }
+        #filters { font-size: 14px; }
+        }
+    </style>
 </head>
 <body>
 
-<h2>CaniX Locations Map v8</h2>
+<h2>CaniX Locations Map v2</h2>
 
 <div id="filters">
     <strong>Categories:</strong> <span id="filter-controls"></span>
@@ -146,18 +77,16 @@ html, body {
             default: url = "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png";
         }
 
-        // Determine icon size based on viewport width
-        let size = window.innerWidth <= 480 ? 60 : 30; // 60px on phones, 30px on desktop
-
         return new L.Icon({
             iconUrl: url,
-            iconSize: [size, size],
-            iconAnchor: [size/2, size],
-            popupAnchor: [0, -size],
+            iconSize: [30, 30],
+            iconAnchor: [15, 30],
+            popupAnchor: [0, -30],
             shadowUrl: null
         });
     }
-        const categoryLayers = {}; // category → cluster group
+
+    const categoryLayers = {}; // category → cluster group
     const categoryIcons = {};  // store icons by category
     const allMarkers = [];
 

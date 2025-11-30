@@ -8,20 +8,39 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
+
     <!-- MarkerCluster -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
+
     <!-- PapaParse for CSV -->
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
     <style>
+        html, body { height: 100%; margin: 0; padding: 0; }
         body { font-family: Arial, sans-serif; }
-        #map { height: 600px; width: 100%; }
-        #filters { padding: 10px; margin-bottom: 8px; background: #f4f4f4; }
-        .filter-item { margin-right: 15px; display: inline-flex; align-items: center; }
+        #map { height: 80vh; width: 100%; }
+        #filters {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        padding: 10px;
+        margin-bottom: 8px;
+        background: #f4f4f4;
+        }
+        .filter-item {
+        flex: 0 0 auto;
+        margin-right: 15px;
+        display: inline-flex;
+        align-items: center;
+        }
         .filter-item img { width: 20px; height: 20px; margin-left: 4px; margin-right: 4px; }
+        @media (max-width: 480px) {
+        #map { height: 70vh; }
+        #filters { font-size: 14px; }
+        }
     </style>
 </head>
 <body>

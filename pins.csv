@@ -1,101 +1,101 @@
 name,category,latitude,longitude,description,eventDate
-Capitolina Dryland,Canicross Race,34.2851647,-85.21773661,ISDRA Race — more info: https://example.com/event-info,1/9/2026
-Race Around Red Top,NACC RACE,34.13969543,-84.70049697,4th annual — more info: https://example.com/event-info,3/8/2026
-Steeplechase Stampede,NACC RACE,33.67359615,-83.94333062,in november — more info: https://example.com/event-info,11/8/2026
-NACC Meet-Up #1,NACC Meet-Up,41.23,-90.12,Auto-generated — more info: https://example.com/event-info,3/15/2025
-NACC Meet-Up #2,NACC Meet-Up,38.45,-82.31,Auto-generated — more info: https://example.com/event-info,7/22/2025
-NACC Meet-Up #3,NACC Meet-Up,36.78,-95.54,Auto-generated — more info: https://example.com/event-info,1/11/2026
-NACC Meet-Up #4,NACC Meet-Up,43.12,-87.56,Auto-generated — more info: https://example.com/event-info,11/30/2025
-NACC Meet-Up #5,NACC Meet-Up,39.65,-104.32,Auto-generated — more info: https://example.com/event-info,4/18/2025
-NACC Meet-Up #6,NACC Meet-Up,37.21,-80.43,Auto-generated — more info: https://example.com/event-info,6/9/2026
-NACC Meet-Up #7,NACC Meet-Up,42.98,-92.76,Auto-generated — more info: https://example.com/event-info,12/22/2026
-NACC Meet-Up #8,NACC Meet-Up,38.12,-85.65,Auto-generated — more info: https://example.com/event-info,8/3/2025
-NACC Meet-Up #9,NACC Meet-Up,41.56,-88.43,Auto-generated — more info: https://example.com/event-info,5/10/2025
-NACC Meet-Up #10,NACC Meet-Up,36.89,-97.12,Auto-generated — more info: https://example.com/event-info,9/27/2025
-NACC Meet-Up #11,NACC Meet-Up,40.22,-89.87,Auto-generated — more info: https://example.com/event-info,2/19/2026
-NACC Meet-Up #12,NACC Meet-Up,39.45,-84.76,Auto-generated — more info: https://example.com/event-info,10/15/2025
-NACC Meet-Up #13,NACC Meet-Up,43.67,-91.34,Auto-generated — more info: https://example.com/event-info,6/23/2025
-NACC Meet-Up #14,NACC Meet-Up,37.98,-82.54,Auto-generated — more info: https://example.com/event-info,3/5/2026
-NACC Meet-Up #15,NACC Meet-Up,41.12,-90.87,Auto-generated — more info: https://example.com/event-info,1/30/2026
-NACC Meet-Up #16,NACC Meet-Up,38.76,-88.23,Auto-generated — more info: https://example.com/event-info,12/3/2025
-NACC Meet-Up #17,NACC Meet-Up,42.34,-93.21,Auto-generated — more info: https://example.com/event-info,7/14/2025
-NACC Meet-Up #18,NACC Meet-Up,36.56,-96.45,Auto-generated — more info: https://example.com/event-info,8/11/2026
-NACC Meet-Up #19,NACC Meet-Up,40.87,-83.12,Auto-generated — more info: https://example.com/event-info,5/20/2026
-NACC Meet-Up #20,NACC Meet-Up,39.45,-85.76,Auto-generated — more info: https://example.com/event-info,9/1/2025
-NACC Meet-Up #21,NACC Meet-Up,43.21,-89.87,Auto-generated — more info: https://example.com/event-info,11/11/2025
-NACC Meet-Up #22,NACC Meet-Up,38.34,-87.45,Auto-generated — more info: https://example.com/event-info,6/30/2025
-NACC Meet-Up #23,NACC Meet-Up,41.67,-92.12,Auto-generated — more info: https://example.com/event-info,8/24/2025
-NACC Meet-Up #24,NACC Meet-Up,36.23,-95.87,Auto-generated — more info: https://example.com/event-info,1/19/2026
-NACC Meet-Up #25,NACC Meet-Up,40.45,-84.32,Auto-generated — more info: https://example.com/event-info,10/4/2026
-NACC Meet-Up #26,NACC Meet-Up,39.76,-88.12,Auto-generated — more info: https://example.com/event-info,4/15/2026
-NACC Meet-Up #27,NACC Meet-Up,42.12,-91.67,Auto-generated — more info: https://example.com/event-info,12/28/2025
-NACC Meet-Up #28,NACC Meet-Up,37.34,-82.12,Auto-generated — more info: https://example.com/event-info,7/1/2025
-NACC Meet-Up #29,NACC Meet-Up,41.98,-90.45,Auto-generated — more info: https://example.com/event-info,10/22/2025
-NACC Meet-Up #30,NACC Meet-Up,38.56,-86.45,Auto-generated — more info: https://example.com/event-info,1/15/2026
-NACC Meet-Up #31,NACC Meet-Up,42.45,-93.12,Auto-generated — more info: https://example.com/event-info,3/9/2026
-NACC Meet-Up #32,NACC Meet-Up,36.98,-95.45,Auto-generated — more info: https://example.com/event-info,6/20/2025
-NACC Meet-Up #33,NACC Meet-Up,40.34,-83.67,Auto-generated — more info: https://example.com/event-info,8/16/2025
-NACC Meet-Up #34,NACC Meet-Up,39.12,-85.98,Auto-generated — more info: https://example.com/event-info,11/5/2025
-NACC Meet-Up #35,NACC Meet-Up,43.45,-89.34,Auto-generated — more info: https://example.com/event-info,2/2/2026
-NACC Meet-Up #36,NACC Meet-Up,38.12,-87.65,Auto-generated — more info: https://example.com/event-info,12/18/2025
-NACC Meet-Up #37,NACC Meet-Up,41.78,-91.23,Auto-generated — more info: https://example.com/event-info,3/22/2026
-NACC Meet-Up #38,NACC Meet-Up,36.45,-95.78,Auto-generated — more info: https://example.com/event-info,7/27/2025
-NACC Meet-Up #39,NACC Meet-Up,40.12,-84.56,Auto-generated — more info: https://example.com/event-info,9/12/2025
-NACC Meet-Up #40,NACC Meet-Up,39.87,-86.34,Auto-generated — more info: https://example.com/event-info,12/5/2025
-NACC Meet-Up #41,NACC Meet-Up,42.56,-92.45,Auto-generated — more info: https://example.com/event-info,1/29/2026
-NACC Meet-Up #42,NACC Meet-Up,37.45,-82.56,Auto-generated — more info: https://example.com/event-info,8/8/2025
-NACC Meet-Up #43,NACC Meet-Up,41.23,-90.78,Auto-generated — more info: https://example.com/event-info,10/30/2025
-NACC Meet-Up #44,NACC Meet-Up,38.65,-87.34,Auto-generated — more info: https://example.com/event-info,2/14/2026
-NACC Meet-Up #45,NACC Meet-Up,42.12,-91.45,Auto-generated — more info: https://example.com/event-info,6/25/2025
-NACC Meet-Up #46,NACC Meet-Up,36.56,-95.12,Auto-generated — more info: https://example.com/event-info,11/19/2025
-NACC Meet-Up #47,NACC Meet-Up,40.45,-83.45,Auto-generated — more info: https://example.com/event-info,3/1/2026
-NACC Meet-Up #48,NACC Meet-Up,39.12,-85.12,Auto-generated — more info: https://example.com/event-info,7/9/2025
-NACC Meet-Up #49,NACC Meet-Up,43.34,-89.45,Auto-generated — more info: https://example.com/event-info,4/22/2026
-NACC Meet-Up #50,NACC Meet-Up,38.23,-87.78,Auto-generated — more info: https://example.com/event-info,12/27/2025
-Canicross Race #1,Canicross Race,35.23,-89.12,Auto-generated — more info: https://example.com/event-info,5/12/2025
-Canicross Race #2,Canicross Race,36.12,-87.45,Auto-generated — more info: https://example.com/event-info,9/2/2025
-Canicross Race #3,Canicross Race,37.45,-91.23,Auto-generated — more info: https://example.com/event-info,2/5/2026
-Canicross Race #4,Canicross Race,34.67,-88.12,Auto-generated — more info: https://example.com/event-info,6/11/2026
-Canicross Race #5,Canicross Race,38.45,-90.34,Auto-generated — more info: https://example.com/event-info,11/13/2025
-Canicross Race #6,Canicross Race,36.89,-86.45,Auto-generated — more info: https://example.com/event-info,12/8/2025
-Canicross Race #7,Canicross Race,35.12,-87.56,Auto-generated — more info: https://example.com/event-info,3/15/2026
-Canicross Race #8,Canicross Race,37.34,-89.45,Auto-generated — more info: https://example.com/event-info,7/21/2025
-Canicross Race #9,Canicross Race,36.23,-88.78,Auto-generated — more info: https://example.com/event-info,1/6/2026
-Canicross Race #10,Canicross Race,34.98,-90.12,Auto-generated — more info: https://example.com/event-info,4/18/2026
-Canicross Race #11,Canicross Race,35.67,-91.23,Auto-generated — more info: https://example.com/event-info,8/19/2025
-Canicross Race #12,Canicross Race,36.45,-88.34,Auto-generated — more info: https://example.com/event-info,10/8/2025
-Canicross Race #13,Canicross Race,37.12,-87.45,Auto-generated — more info: https://example.com/event-info,2/25/2026
-Canicross Race #14,Canicross Race,34.56,-89.78,Auto-generated — more info: https://example.com/event-info,6/2/2026
-Canicross Race #15,Canicross Race,36.23,-90.45,Auto-generated — more info: https://example.com/event-info,12/21/2025
-Canicross Race #16,Canicross Race,35.78,-88.12,Auto-generated — more info: https://example.com/event-info,9/16/2025
-Canicross Race #17,Canicross Race,37.34,-87.23,Auto-generated — more info: https://example.com/event-info,1/29/2026
-Canicross Race #18,Canicross Race,34.12,-90.78,Auto-generated — more info: https://example.com/event-info,3/7/2026
-Canicross Race #19,Canicross Race,36.45,-88.34,Auto-generated — more info: https://example.com/event-info,8/4/2025
-Canicross Race #20,Canicross Race,35.34,-89.12,Auto-generated — more info: https://example.com/event-info,4/27/2026
-Canicross Race #21,Canicross Race,37.45,-91.12,Auto-generated — more info: https://example.com/event-info,5/29/2025
-Canicross Race #22,Canicross Race,36.12,-88.45,Auto-generated — more info: https://example.com/event-info,1/18/2026
-Canicross Race #23,Canicross Race,34.78,-89.34,Auto-generated — more info: https://example.com/event-info,7/12/2025
-Canicross Race #24,Canicross Race,35.89,-90.56,Auto-generated — more info: https://example.com/event-info,10/25/2025
-Canicross Race #25,Canicross Race,37.12,-87.78,Auto-generated — more info: https://example.com/event-info,2/10/2026
-Dog-Friendly Race #1,Dog-Friendly Race,39.12,-105.45,Auto-generated — more info: https://example.com/event-info,6/3/2025
-Dog-Friendly Race #2,Dog-Friendly Race,38.45,-103.12,Auto-generated — more info: https://example.com/event-info,1/14/2026
-Dog-Friendly Race #3,Dog-Friendly Race,37.89,-104.67,Auto-generated — more info: https://example.com/event-info,12/7/2025
-Dog-Friendly Race #4,Dog-Friendly Race,36.12,-102.34,Auto-generated — more info: https://example.com/event-info,9/5/2025
-Dog-Friendly Race #5,Dog-Friendly Race,35.67,-103.45,Auto-generated — more info: https://example.com/event-info,3/19/2026
-Dog-Friendly Race #6,Dog-Friendly Race,39.34,-104.12,Auto-generated — more info: https://example.com/event-info,7/22/2025
-Dog-Friendly Race #7,Dog-Friendly Race,38.12,-105.67,Auto-generated — more info: https://example.com/event-info,8/30/2025
-Dog-Friendly Race #8,Dog-Friendly Race,37.45,-102.12,Auto-generated — more info: https://example.com/event-info,11/17/2025
-Dog-Friendly Race #9,Dog-Friendly Race,36.78,-103.89,Auto-generated — more info: https://example.com/event-info,5/5/2026
-Dog-Friendly Race #10,Dog-Friendly Race,35.12,-104.45,Auto-generated — more info: https://example.com/event-info,6/28/2025
-Dog-Friendly Race #11,Dog-Friendly Race,39.45,-105.12,Auto-generated — more info: https://example.com/event-info,2/21/2026
-Dog-Friendly Race #12,Dog-Friendly Race,38.78,-103.45,Auto-generated — more info: https://example.com/event-info,7/11/2025
-Dog-Friendly Race #13,Dog-Friendly Race,37.12,-104.23,Auto-generated — more info: https://example.com/event-info,12/1/2025
-Dog-Friendly Race #14,Dog-Friendly Race,36.45,-102.56,Auto-generated — more info: https://example.com/event-info,3/2/2026
-Dog-Friendly Race #15,Dog-Friendly Race,35.78,-103.12,Auto-generated — more info: https://example.com/event-info,10/10/2025
-Dog-Friendly Race #16,Dog-Friendly Race,39.12,-104.56,Auto-generated — more info: https://example.com/event-info,9/18/2025
-Dog-Friendly Race #17,Dog-Friendly Race,38.34,-105.23,Auto-generated — more info: https://example.com/event-info,1/25/2026
-Dog-Friendly Race #18,Dog-Friendly Race,37.56,-102.78,Auto-generated — more info: https://example.com/event-info,4/8/2026
-Dog-Friendly Race #19,Dog-Friendly Race,36.78,-103.12,Auto-generated — more info: https://example.com/event-info,8/23/2025
-Dog-Friendly Race #20,Dog-Friendly Race,35.45,-104.78,Auto-generated — more info: https://example.com/event-info,12/17/2025
-Dog-Friendly Race #21,Dog-Friendly Race,39.56,-105.34,Auto-generated — more info: https://example.com/event-info,3/26/2026
-Dog-Friendly Race #22,Dog-Friendly Race,38.12,-103.67,Auto-generated — more info: https://example.com/event-info,6/7/2026
+Capitolina Dryland,Canicross Race,34.2851647,-85.21773661,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/9/2026
+Race Around Red Top,NACC RACE,34.13969543,-84.70049697,<a href='https://example.com/pinX2' target='_blank'>Event Info 2</a>,3/8/2026
+Steeplechase Stampede,NACC RACE,33.67359615,-83.94333062,<a href='https://example.com/pinX3' target='_blank'>Event Info3</a>,11/8/2026
+NACC Meet-Up #1,NACC Meet-Up,41.23,-90.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/15/2025
+NACC Meet-Up #2,NACC Meet-Up,38.45,-82.31,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/22/2025
+NACC Meet-Up #3,NACC Meet-Up,36.78,-95.54,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/11/2026
+NACC Meet-Up #4,NACC Meet-Up,43.12,-87.56,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,11/30/2025
+NACC Meet-Up #5,NACC Meet-Up,39.65,-104.32,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,4/18/2025
+NACC Meet-Up #6,NACC Meet-Up,37.21,-80.43,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/9/2026
+NACC Meet-Up #7,NACC Meet-Up,42.98,-92.76,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/22/2026
+NACC Meet-Up #8,NACC Meet-Up,38.12,-85.65,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,8/3/2025
+NACC Meet-Up #9,NACC Meet-Up,41.56,-88.43,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,5/10/2025
+NACC Meet-Up #10,NACC Meet-Up,36.89,-97.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,9/27/2025
+NACC Meet-Up #11,NACC Meet-Up,40.22,-89.87,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,2/19/2026
+NACC Meet-Up #12,NACC Meet-Up,39.45,-84.76,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,10/15/2025
+NACC Meet-Up #13,NACC Meet-Up,43.67,-91.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/23/2025
+NACC Meet-Up #14,NACC Meet-Up,37.98,-82.54,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/5/2026
+NACC Meet-Up #15,NACC Meet-Up,41.12,-90.87,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/30/2026
+NACC Meet-Up #16,NACC Meet-Up,38.76,-88.23,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/3/2025
+NACC Meet-Up #17,NACC Meet-Up,42.34,-93.21,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/14/2025
+NACC Meet-Up #18,NACC Meet-Up,36.56,-96.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,8/11/2026
+NACC Meet-Up #19,NACC Meet-Up,40.87,-83.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,5/20/2026
+NACC Meet-Up #20,NACC Meet-Up,39.45,-85.76,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,9/1/2025
+NACC Meet-Up #21,NACC Meet-Up,43.21,-89.87,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,11/11/2025
+NACC Meet-Up #22,NACC Meet-Up,38.34,-87.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/30/2025
+NACC Meet-Up #23,NACC Meet-Up,41.67,-92.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,8/24/2025
+NACC Meet-Up #24,NACC Meet-Up,36.23,-95.87,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/19/2026
+NACC Meet-Up #25,NACC Meet-Up,40.45,-84.32,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,10/4/2026
+NACC Meet-Up #26,NACC Meet-Up,39.76,-88.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,4/15/2026
+NACC Meet-Up #27,NACC Meet-Up,42.12,-91.67,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/28/2025
+NACC Meet-Up #28,NACC Meet-Up,37.34,-82.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/1/2025
+NACC Meet-Up #29,NACC Meet-Up,41.98,-90.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,10/22/2025
+NACC Meet-Up #30,NACC Meet-Up,38.56,-86.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/15/2026
+NACC Meet-Up #31,NACC Meet-Up,42.45,-93.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/9/2026
+NACC Meet-Up #32,NACC Meet-Up,36.98,-95.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/20/2025
+NACC Meet-Up #33,NACC Meet-Up,40.34,-83.67,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,8/16/2025
+NACC Meet-Up #34,NACC Meet-Up,39.12,-85.98,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,11/5/2025
+NACC Meet-Up #35,NACC Meet-Up,43.45,-89.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,2/2/2026
+NACC Meet-Up #36,NACC Meet-Up,38.12,-87.65,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/18/2025
+NACC Meet-Up #37,NACC Meet-Up,41.78,-91.23,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/22/2026
+NACC Meet-Up #38,NACC Meet-Up,36.45,-95.78,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/27/2025
+NACC Meet-Up #39,NACC Meet-Up,40.12,-84.56,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,9/12/2025
+NACC Meet-Up #40,NACC Meet-Up,39.87,-86.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/5/2025
+NACC Meet-Up #41,NACC Meet-Up,42.56,-92.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/29/2026
+NACC Meet-Up #42,NACC Meet-Up,37.45,-82.56,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,8/8/2025
+NACC Meet-Up #43,NACC Meet-Up,41.23,-90.78,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,10/30/2025
+NACC Meet-Up #44,NACC Meet-Up,38.65,-87.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,2/14/2026
+NACC Meet-Up #45,NACC Meet-Up,42.12,-91.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/25/2025
+NACC Meet-Up #46,NACC Meet-Up,36.56,-95.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,11/19/2025
+NACC Meet-Up #47,NACC Meet-Up,40.45,-83.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/1/2026
+NACC Meet-Up #48,NACC Meet-Up,39.12,-85.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/9/2025
+NACC Meet-Up #49,NACC Meet-Up,43.34,-89.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,4/22/2026
+NACC Meet-Up #50,NACC Meet-Up,38.23,-87.78,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/27/2025
+Canicross Race #1,Canicross Race,35.23,-89.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,5/12/2025
+Canicross Race #2,Canicross Race,36.12,-87.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,9/2/2025
+Canicross Race #3,Canicross Race,37.45,-91.23,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,2/5/2026
+Canicross Race #4,Canicross Race,34.67,-88.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/11/2026
+Canicross Race #5,Canicross Race,38.45,-90.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,11/13/2025
+Canicross Race #6,Canicross Race,36.89,-86.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/8/2025
+Canicross Race #7,Canicross Race,35.12,-87.56,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/15/2026
+Canicross Race #8,Canicross Race,37.34,-89.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/21/2025
+Canicross Race #9,Canicross Race,36.23,-88.78,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/6/2026
+Canicross Race #10,Canicross Race,34.98,-90.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,4/18/2026
+Canicross Race #11,Canicross Race,35.67,-91.23,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,8/19/2025
+Canicross Race #12,Canicross Race,36.45,-88.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,10/8/2025
+Canicross Race #13,Canicross Race,37.12,-87.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,2/25/2026
+Canicross Race #14,Canicross Race,34.56,-89.78,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/2/2026
+Canicross Race #15,Canicross Race,36.23,-90.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/21/2025
+Canicross Race #16,Canicross Race,35.78,-88.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,9/16/2025
+Canicross Race #17,Canicross Race,37.34,-87.23,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/29/2026
+Canicross Race #18,Canicross Race,34.12,-90.78,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/7/2026
+Canicross Race #19,Canicross Race,36.45,-88.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,8/4/2025
+Canicross Race #20,Canicross Race,35.34,-89.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,4/27/2026
+Canicross Race #21,Canicross Race,37.45,-91.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,5/29/2025
+Canicross Race #22,Canicross Race,36.12,-88.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/18/2026
+Canicross Race #23,Canicross Race,34.78,-89.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/12/2025
+Canicross Race #24,Canicross Race,35.89,-90.56,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,10/25/2025
+Canicross Race #25,Canicross Race,37.12,-87.78,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,2/10/2026
+Dog-Friendly Race #1,Dog-Friendly Race,39.12,-105.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/3/2025
+Dog-Friendly Race #2,Dog-Friendly Race,38.45,-103.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/14/2026
+Dog-Friendly Race #3,Dog-Friendly Race,37.89,-104.67,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/7/2025
+Dog-Friendly Race #4,Dog-Friendly Race,36.12,-102.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,9/5/2025
+Dog-Friendly Race #5,Dog-Friendly Race,35.67,-103.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/19/2026
+Dog-Friendly Race #6,Dog-Friendly Race,39.34,-104.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/22/2025
+Dog-Friendly Race #7,Dog-Friendly Race,38.12,-105.67,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,8/30/2025
+Dog-Friendly Race #8,Dog-Friendly Race,37.45,-102.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,11/17/2025
+Dog-Friendly Race #9,Dog-Friendly Race,36.78,-103.89,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,5/5/2026
+Dog-Friendly Race #10,Dog-Friendly Race,35.12,-104.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/28/2025
+Dog-Friendly Race #11,Dog-Friendly Race,39.45,-105.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,2/21/2026
+Dog-Friendly Race #12,Dog-Friendly Race,38.78,-103.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/11/2025
+Dog-Friendly Race #13,Dog-Friendly Race,37.12,-104.23,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/1/2025
+Dog-Friendly Race #14,Dog-Friendly Race,36.45,-102.56,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/2/2026
+Dog-Friendly Race #15,Dog-Friendly Race,35.78,-103.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,10/10/2025
+Dog-Friendly Race #16,Dog-Friendly Race,39.12,-104.56,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,9/18/2025
+Dog-Friendly Race #17,Dog-Friendly Race,38.34,-105.23,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,1/25/2026
+Dog-Friendly Race #18,Dog-Friendly Race,37.56,-102.78,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,4/8/2026
+Dog-Friendly Race #19,Dog-Friendly Race,36.78,-103.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,8/23/2025
+Dog-Friendly Race #20,Dog-Friendly Race,35.45,-104.78,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,12/17/2025
+Dog-Friendly Race #21,Dog-Friendly Race,39.56,-105.34,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/26/2026
+Dog-Friendly Race #22,Dog-Friendly Race,38.12,-103.67,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/7/2026

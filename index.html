@@ -37,6 +37,7 @@
         .filter-item {
             flex: 0 0 auto;
             margin-right: 15px;
+            margin-bottom: 8px; /* extra vertical spacing for touch */
             display: inline-flex;
             align-items: center;
 
@@ -68,15 +69,32 @@
             font-size: clamp(12px, 1.5vw, 18px);
         }
 
-        /* Optional: slightly reduce map height on smaller devices */
+        /* Inputs and buttons scaling */
+        #filters input[type="checkbox"],
+        #filters input[type="date"],
+        #filters button {
+            transform: scale(1.2);
+            margin: 4px 6px;
+            cursor: pointer;
+        }
+
+        /* Mobile adjustments */
         @media (max-width: 768px) {
             #map { height: 70vh; }
+
+            #filters input[type="checkbox"],
+            #filters input[type="date"],
+            #filters button {
+                transform: scale(1.5);
+                margin: 6px 8px;
+            }
         }
     </style>
+
 </head>
 <body>
 
-<h2>CaniX Locations Map v5</h2>
+<h2>CaniX Locations Map v6</h2>
 
 <div id="filters">
     <strong>Categories:</strong> <span id="filter-controls"></span>

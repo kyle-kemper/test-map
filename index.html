@@ -23,6 +23,7 @@
         body { font-family: Arial, sans-serif; }
         #map { height: 80vh; width: 100%; }
 
+        /* Filters container */
         #filters {
             display: flex;
             flex-wrap: wrap;
@@ -32,25 +33,42 @@
             background: #f4f4f4;
         }
 
+        /* Each filter item */
         .filter-item {
             flex: 0 0 auto;
             margin-right: 15px;
             display: inline-flex;
             align-items: center;
 
-            /* Font scales between 14px (small) and 20px (large) based on viewport width */
+            /* Font scales smoothly from 14px (small) to 20px (large) */
             font-size: clamp(14px, 2vw, 20px);
         }
 
+        /* Filter icons scale with screen width */
         .filter-item img {
-            /* Icon scales smoothly between 20px and 40px */
             width: clamp(20px, 4vw, 40px);
             height: clamp(20px, 4vw, 40px);
             margin-left: 4px;
             margin-right: 4px;
         }
 
-        /* Optional: scale map height slightly on small devices */
+        /* Leaflet popups */
+        .leaflet-popup-content {
+            font-size: clamp(14px, 2.2vw, 20px);
+            line-height: 1.4;
+        }
+
+        .leaflet-popup-content-wrapper {
+            padding: clamp(8px, 1.5vw, 16px);
+        }
+
+        .leaflet-popup-close-button {
+            width: clamp(16px, 2vw, 24px);
+            height: clamp(16px, 2vw, 24px);
+            font-size: clamp(12px, 1.5vw, 18px);
+        }
+
+        /* Optional: slightly reduce map height on smaller devices */
         @media (max-width: 768px) {
             #map { height: 70vh; }
         }
@@ -58,7 +76,7 @@
 </head>
 <body>
 
-<h2>CaniX Locations Map v4</h2>
+<h2>CaniX Locations Map v5</h2>
 
 <div id="filters">
     <strong>Categories:</strong> <span id="filter-controls"></span>

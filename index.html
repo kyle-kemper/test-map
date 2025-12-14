@@ -8,38 +8,115 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-
     <!-- MarkerCluster -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
-
-    <!-- PapaParse for CSV -->
+    <!-- PapaParse -->
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
     <style>
-        html, body { height: 100%; margin: 0; padding: 0; }
-        body { font-family: Arial, sans-serif; }
-        #map { height: 80vh; width: 100%; }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        h2 {
+            margin: 10px;
+        }
+
+        #map {
+            height: 78vh;
+            width: 100%;
+        }
+
         #filters {
-        display: flex;
-        flex-wrap: wrap;
-        overflow-x: auto;
-        padding: 10px;
-        margin-bottom: 8px;
-        background: #f4f4f4;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-x: auto;
+            padding: 14px;
+            margin-bottom: 8px;
+            background: #f4f4f4;
+            gap: 14px;
+            align-items: center;
         }
+
         .filter-item {
-        flex: 0 0 auto;
-        margin-right: 15px;
-        display: inline-flex;
-        align-items: center;
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
         }
-        .filter-item img { width: 20px; height: 20px; margin-left: 4px; margin-right: 4px; }
-        @media (max-width: 480px) {
-        #map { height: 70vh; }
-        #filters { font-size: 14px; }
+
+        .filter-item img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .filter-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        input[type="date"], button {
+            font-size: 16px;
+            padding: 6px 10px;
+        }
+
+        /* MASSIVELY SCALED MOBILE MODE */
+        @media (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 22px;
+                margin: 12px;
+            }
+
+            #filters {
+                font-size: 18px;
+                padding: 18px;
+                gap: 18px;
+            }
+
+            .filter-item {
+                font-size: 18px;
+            }
+
+            .filter-item img {
+                width: 56px;
+                height: 56px;
+            }
+
+            .filter-item input[type="checkbox"] {
+                width: 26px;
+                height: 26px;
+            }
+
+            input[type="date"], button {
+                font-size: 18px;
+                padding: 10px 14px;
+            }
+
+            #map {
+                height: 72vh;
+            }
+
+            .leaflet-control-zoom a {
+                width: 52px;
+                height: 52px;
+                line-height: 52px;
+                font-size: 26px;
+            }
         }
     </style>
 </head>
@@ -48,8 +125,9 @@
 <h2>CaniX Locations Map v2</h2>
 
 <div id="filters">
-    <strong>Categories:</strong> <span id="filter-controls"></span>
-    <br><br>
+    <strong>Categories:</strong>
+    <span id="filter-controls"></span>
+
     <strong>Filter by Date:</strong>
     <input type="date" id="startDate">
     <input type="date" id="endDate">
@@ -59,14 +137,14 @@
 <div id="map"></div>
 
 <script>
-    // Initialize map
+    const isMobile = window.innerWidth <= 600;
+
     const map = L.map('map').setView([39.5, -98.35], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19
     }).addTo(map);
 
-    // Custom Map Icons
     function customIcon(filename = "default") {
         let url;
         switch(filename) {
@@ -74,20 +152,23 @@
             case "naccmeetup": url = "icons/naccmeetup.png"; break;
             case "crace": url = "icons/crace.png"; break;
             case "dograce": url = "icons/dograce.png"; break;
-            default: url = "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png";
+            default:
+                url = "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png";
         }
+
+        const size = isMobile ? 90 : 60; // intentionally HUGE
 
         return new L.Icon({
             iconUrl: url,
-            iconSize: [30, 30],
-            iconAnchor: [15, 30],
-            popupAnchor: [0, -30],
+            iconSize: [size, size],
+            iconAnchor: [size / 2, size],
+            popupAnchor: [0, -size / 2],
             shadowUrl: null
         });
     }
 
-    const categoryLayers = {}; // category → cluster group
-    const categoryIcons = {};  // store icons by category
+    const categoryLayers = {};
+    const categoryIcons = {};
     const allMarkers = [];
 
     function parseDate(dateStr) {
@@ -96,7 +177,6 @@
         return isNaN(d) ? null : d;
     }
 
-    // Map category → icon filename (case-sensitive)
     const iconMapping = {
         "NACC RACE": "nacclogo",
         "NACC Meet-Up": "naccmeetup",
@@ -104,7 +184,6 @@
         "Dog-Friendly Race": "dograce"
     };
 
-    // Load CSV
     Papa.parse("pins.csv", {
         download: true,
         header: true,
@@ -117,50 +196,42 @@
                 const category = row.category || "Other";
                 const iconType = iconMapping[category] || "default";
 
-                // Create layer for category if new
                 if (!categoryLayers[category]) {
                     categoryLayers[category] = L.markerClusterGroup().addTo(map);
-
-                    // Create icon for category
                     categoryIcons[category] = customIcon(iconType);
 
-                    // Add checkbox filter UI with icon
                     const id = `check-${category}`;
                     filterContainer.innerHTML += `
                         <label class="filter-item">
-                            <input type="checkbox" id="${id}" checked
-                            onchange="toggleCategory('${category}')">
-                            <img src="${customIcon(iconType).options.iconUrl}">
+                            <input type="checkbox" id="${id}" checked onchange="toggleCategory('${category}')">
+                            <img src="${categoryIcons[category].options.iconUrl}">
                             ${category}
                         </label>
                     `;
                 }
 
-                // Make marker
-                const marker = L.marker(
-                    [parseFloat(row.latitude), parseFloat(row.longitude)],
-                    { icon: categoryIcons[category] }
-                );
+                const marker = L.marker([
+                    parseFloat(row.latitude),
+                    parseFloat(row.longitude)
+                ], { icon: categoryIcons[category] });
 
                 const eventDate = parseDate(row.eventDate);
                 marker.category = category;
                 marker.eventDate = eventDate;
 
-                const popup = `
+                marker.bindPopup(`
                     <strong>${row.name || "Unnamed"}</strong><br>
                     ${row.description || ""}<br>
                     <em>${category}</em><br>
                     ${eventDate ? `<strong>Date:</strong> ${eventDate.toDateString()}` : ""}
-                `;
+                `);
 
-                marker.bindPopup(popup);
                 categoryLayers[category].addLayer(marker);
                 allMarkers.push(marker);
             });
         }
     });
 
-    // Toggle checkbox filter function
     function toggleCategory(category) {
         const checkbox = document.getElementById(`check-${category}`);
         if (checkbox.checked) {
@@ -170,7 +241,6 @@
         }
     }
 
-    // Date filter function
     function applyDateFilter() {
         const start = parseDate(document.getElementById("startDate").value);
         const end = parseDate(document.getElementById("endDate").value);

@@ -1,11 +1,12 @@
 RaceName,EventType,latitude,longitude,RaceURL,StartDate
-Capitolina Dryland,Canicross Race,34.2851647,-85.21773661,<a href='https://runsignup.com/Race/GA/Rome/CapitolinaDrylandChallenge' target='_blank'>Event Info</a>,1/10/2026
-Race Around Red Top,Canicross Race,34.13969543,-84.70049697,<a href='https://nacanicross.com/race-around-red-top-26' target='_blank'>Event Info</a>,3/8/2026
-Steeplechase Stampede,Canine OCR,33.67359615,-83.94333062,<a href='https://nacanicross.com/steeplechase-stampede-25' target='_blank'>Event Info</a>,11/8/2026
-NACC Meet-Up #1,NACC Meet-Up,41.23,-90.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,3/15/2025
-NACC Meet-Up #2,NACC Meet-Up,38.45,-82.31,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,7/22/2025
-Canicross Race #1,Canicross Race,35.23,-89.12,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,5/12/2025
-Canicross Race #2,Canicross Race,36.12,-87.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,9/2/2025
-Dog-Friendly Race #1,Dog Friendly Trail Race,39.12,-105.45,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/3/2025
-Dog-Friendly Race #22,Dog Friendly Trail Race,38.12,-103.67,<a href='https://example.com/pinX' target='_blank'>Event Info</a>,6/7/2026
+Capitolina Dryland,Canicross Race,34.2851647,-85.21773661,'https://runsignup.com/Race/GA/Rome/CapitolinaDrylandChallenge',1/10/2026
+Race Around Red Top,Canicross Race,34.13969543,-84.70049697,'https://runsignup.com/Race/GA/Rome/CapitolinaDrylandChallenge',3/8/2026
+Steeplechase Stampede,Canine OCR,33.67359615,-83.94333062,'https://runsignup.com/Race/GA/Rome/CapitolinaDrylandChallenge',11/8/2026
+NACC Meet-Up #1,NACC Meet-Up,41.23,-90.12,link,3/15/2025
+NACC Meet-Up #2,NACC Meet-Up,38.45,-82.31,aaa,7/22/2025
+Canicross Race #1,Canicross Race,35.23,-89.12,aaaa,5/12/2025
+Canicross Race #2,Canicross Race,36.12,-87.45,aaaa,9/2/2025
+Dog-Friendly Race #1,Dog Friendly Trail Race,39.12,-105.45,aaaa,6/3/2025
+Dog-Friendly Race #22,Dog Friendly Trail Race,38.12,-103.67,aaaa,6/7/2026
+
 

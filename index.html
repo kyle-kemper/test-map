@@ -17,176 +17,43 @@
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-
-        h2 {
-            margin: 12px;
-        }
-
-        #map {
-            height: 72vh;
-            width: 100%;
-        }
-
-        /* ================= FILTER BAR ================= */
+        html, body { height: 100%; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; }
+        #map { height: 80vh; width: 100%; }
         #filters {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            padding: 14px;
+            overflow-x: auto;
+            padding: 12px;
+            margin-bottom: 8px;
             background: #f4f4f4;
-            border-bottom: 2px solid #ddd;
-            align-items: center;
+            font-size: 16px;
         }
-
-        #filter-controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
         .filter-item {
+            flex: 0 0 auto;
+            margin-right: 18px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 16px;
-            padding: 6px 8px;
         }
-
         .filter-item img {
-            width: 40px;
-            height: 40px;
+            width: 26px;
+            height: 26px;
+            margin: 0 6px;
         }
-
-        .filter-item input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-        }
-
-        input[type="date"], button {
-            font-size: 16px;
-            padding: 6px 10px;
-        }
-
-        /* ================= LEAFLET POPUPS ================= */
-        .leaflet-popup-content {
-            font-size: 16px;
-            line-height: 1.4;
-        }
-
-        /* ================= MOBILE MODE ================= */
-        @media (max-width: 600px) {
-            body {
-                font-size: 18px;
-                padding-top: 6px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
-
-            #filters {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 20px 18px;
-                gap: 16px;
-                font-size: 18px;
-                position: sticky;
-                top: 0;
-                z-index: 1000;
-                background: #f4f4f4;
-            }
-
-            #filter-controls {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 14px;
-            }
-
-            .filter-item {
-                font-size: 18px;
-                padding: 10px 14px;
-                background: #fff;
-                border-radius: 10px;
-                border: 1px solid #ccc;
-            }
-
-            .filter-item img {
-                width: 56px;
-                height: 56px; 
-            }
-
-            .filter-item input[type="checkbox"] {
-                width: 26px;
-                height: 26px;
-            }
-
-            input[type="date"], button {
-                font-size: 18px;
-                padding: 10px 14px;
-                width: 100%;
-                max-width: 300px;
-            }
-
-            #map {
-                height: 70vh;
-            }
-
-            /* BIG MOBILE POPUPS */
-            .leaflet-popup {
-                max-width: 320px;
-            }
-
-            .leaflet-popup-content {
-                font-size: 19px;
-                line-height: 1.5;
-                margin: 14px;
-            }
-
-            .leaflet-popup-content strong {
-                font-size: 20px;
-            }
-
-            .leaflet-popup-content-wrapper {
-                border-radius: 14px;
-            }
-
-            .leaflet-popup-tip {
-                transform: scale(1.3);
-            }
-
-            .leaflet-popup-close-button {
-                font-size: 22px;
-                padding: 8px 10px;
-            }
-
-            .leaflet-control-zoom a {
-                width: 52px;
-                height: 52px;
-                line-height: 52px;
-                font-size: 26px;
-            }
+        @media (max-width: 480px) {
+            #map { height: 70vh; }
+            #filters { font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
-<h2>CaniX Locations Map v2025-12-15</h2>
+<h2>CaniX Locations Map</h2>
 
 <div id="filters">
-    <strong>Categories:</strong>
-    <span id="filter-controls"></span>
-
-    <strong>Filter by Date:</strong>
+    <strong>Categories:</strong>&nbsp;<span id="filter-controls"></span>
+    <br><br>
+    <strong>Filter by Date:</strong>&nbsp;
     <input type="date" id="startDate">
     <input type="date" id="endDate">
     <button onclick="applyDateFilter()">Apply</button>
@@ -195,8 +62,6 @@
 <div id="map"></div>
 
 <script>
-    const isMobile = window.innerWidth <= 600;
-
     const map = L.map('map').setView([39.5, -98.35], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -214,19 +79,17 @@
                 url = "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png";
         }
 
-        const size = isMobile ? 90 : 60; // intentionally very large
-
         return new L.Icon({
             iconUrl: url,
-            iconSize: [size, size],
-            iconAnchor: [size / 2, size],
-            popupAnchor: [0, -size / 2],
+            iconSize: [36, 36],
+            iconAnchor: [18, 36],
+            popupAnchor: [0, -34],
             shadowUrl: null
         });
     }
 
-    const EventTypeLayers = {};
-    const EventTypeIcons = {};
+    const categoryLayers = {};
+    const categoryIcons = {};
     const allMarkers = [];
 
     function parseDate(dateStr) {
@@ -239,10 +102,11 @@
         "NACC RACE": "nacclogo",
         "NACC Meet-Up": "naccmeetup",
         "Canicross Race": "crace",
-        "Dog Friendly Trail Race": "dograce"
+        "Dog-Friendly Race": "dograce"
     };
 
-    Papa.parse("pins.csv", {
+    // Load pins2.csv
+    Papa.parse("pins2.csv", {
         download: true,
         header: true,
         complete: function(results) {
@@ -251,51 +115,55 @@
             results.data.forEach(row => {
                 if (!row.latitude || !row.longitude) return;
 
-                const EventType = row.EventType || "Other";
-                const iconType = iconMapping[EventType] || "default";
+                const name = row.RaceName || "Unnamed";
+                const category = row.EventType || "Other";
+                const description = row.RaceURL || "";
+                const eventDate = parseDate(row.StartDate);
 
-                if (!EventTypeLayers[EventType]) {
-                    EventTypeLayers[EventType] = L.markerClusterGroup().addTo(map);
-                    EventTypeIcons[EventType] = customIcon(iconType);
+                const iconType = iconMapping[category] || "default";
 
-                    const id = `check-${EventType}`;
+                if (!categoryLayers[category]) {
+                    categoryLayers[category] = L.markerClusterGroup().addTo(map);
+                    categoryIcons[category] = customIcon(iconType);
+
+                    const id = `check-${category}`;
                     filterContainer.innerHTML += `
                         <label class="filter-item">
-                            <input type="checkbox" id="${id}" checked onchange="toggleEventType('${EventType}')">
-                            <img src="${EventTypeIcons[EventType].options.iconUrl}">
-                            ${EventType}
+                            <input type="checkbox" id="${id}" checked onchange="toggleCategory('${category}')">
+                            <img src="${customIcon(iconType).options.iconUrl}">
+                            ${category}
                         </label>
                     `;
                 }
 
-                const marker = L.marker([
-                    parseFloat(row.latitude),
-                    parseFloat(row.longitude)
-                ], { icon: EventTypeIcons[EventType] });
+                const marker = L.marker(
+                    [parseFloat(row.latitude), parseFloat(row.longitude)],
+                    { icon: categoryIcons[category] }
+                );
 
-                const RaceStart = parseDate(row.RaceStart);
-                marker.EventType = EventType;
-                marker.RaceStart = RaceStart;
+                marker.category = category;
+                marker.eventDate = eventDate;
 
-                marker.bindPopup(`
-                    <strong>${row.RaceName || "Unnamed"}</strong><br>
-                    ${row.RaceURL || ""}<br>
-                    <em>${EventType}</em><br>
-                    ${RaceStart ? `<strong>Date:</strong> ${RaceStart.toDateString()}` : ""}
-                `);
+                const popup = `
+                    <strong>${name}</strong><br>
+                    ${description ? `<a href="${description}" target="_blank">Event website</a><br>` : ""}
+                    <em>${category}</em><br>
+                    ${eventDate ? `<strong>Date:</strong> ${eventDate.toDateString()}` : ""}
+                `;
 
-                EventTypeLayers[EventType].addLayer(marker);
+                marker.bindPopup(popup);
+                categoryLayers[category].addLayer(marker);
                 allMarkers.push(marker);
             });
         }
     });
 
-    function toggleEventType(EventType) {
-        const checkbox = document.getElementById(`check-${EventType}`);
+    function toggleCategory(category) {
+        const checkbox = document.getElementById(`check-${category}`);
         if (checkbox.checked) {
-            map.addLayer(EventTypeLayers[EventType]);
+            map.addLayer(categoryLayers[category]);
         } else {
-            map.removeLayer(EventTypeLayers[EventType]);
+            map.removeLayer(categoryLayers[category]);
         }
     }
 
@@ -303,20 +171,20 @@
         const start = parseDate(document.getElementById("startDate").value);
         const end = parseDate(document.getElementById("endDate").value);
 
-        for (const cat in EventTypeLayers) {
-            EventTypeLayers[cat].clearLayers();
+        for (const cat in categoryLayers) {
+            categoryLayers[cat].clearLayers();
         }
 
         allMarkers.forEach(marker => {
-            const cat = marker.EventType;
+            const cat = marker.category;
             const checkbox = document.getElementById(`check-${cat}`);
             let ok = true;
 
-            if (start && marker.RaceStart && marker.RaceStart < start) ok = false;
-            if (end && marker.RaceStart && marker.RaceStart > end) ok = false;
+            if (start && marker.eventDate && marker.eventDate < start) ok = false;
+            if (end && marker.eventDate && marker.eventDate > end) ok = false;
 
             if (ok && checkbox.checked) {
-                EventTypeLayers[cat].addLayer(marker);
+                categoryLayers[cat].addLayer(marker);
             }
         });
     }

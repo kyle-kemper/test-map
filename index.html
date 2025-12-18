@@ -180,7 +180,7 @@
 </head>
 <body>
 
-<h2>CaniX Locations Map v2025-12-14</h2>
+<h2>CaniX Locations Map v2025-12-15</h2>
 
 <div id="filters">
     <strong>Categories:</strong>
@@ -225,8 +225,8 @@
         });
     }
 
-    const categoryLayers = {};
-    const categoryIcons = {};
+    const EventTypeLayers = {};
+    const EventTypeIcons = {};
     const allMarkers = [];
 
     function parseDate(dateStr) {
@@ -239,7 +239,7 @@
         "NACC RACE": "nacclogo",
         "NACC Meet-Up": "naccmeetup",
         "Canicross Race": "crace",
-        "Dog-Friendly Race": "dograce"
+        "Dog Friendly Trail Race": "dograce"
     };
 
     Papa.parse("pins.csv", {
@@ -251,19 +251,19 @@
             results.data.forEach(row => {
                 if (!row.latitude || !row.longitude) return;
 
-                const category = row.category || "Other";
-                const iconType = iconMapping[category] || "default";
+                const EventType = row.EventType || "Other";
+                const iconType = iconMapping[EventType] || "default";
 
-                if (!categoryLayers[category]) {
-                    categoryLayers[category] = L.markerClusterGroup().addTo(map);
-                    categoryIcons[category] = customIcon(iconType);
+                if (!EventTypeLayers[EventType]) {
+                    EventTypeLayers[EventType] = L.markerClusterGroup().addTo(map);
+                    EventTypeIcons[EventType] = customIcon(iconType);
 
-                    const id = `check-${category}`;
+                    const id = `check-${EventType}`;
                     filterContainer.innerHTML += `
                         <label class="filter-item">
-                            <input type="checkbox" id="${id}" checked onchange="toggleCategory('${category}')">
-                            <img src="${categoryIcons[category].options.iconUrl}">
-                            ${category}
+                            <input type="checkbox" id="${id}" checked onchange="toggleEventType('${EventType}')">
+                            <img src="${EventTypeIcons[EventType].options.iconUrl}">
+                            ${EventType}
                         </label>
                     `;
                 }
@@ -271,31 +271,31 @@
                 const marker = L.marker([
                     parseFloat(row.latitude),
                     parseFloat(row.longitude)
-                ], { icon: categoryIcons[category] });
+                ], { icon: EventTypeIcons[EventType] });
 
-                const eventDate = parseDate(row.eventDate);
-                marker.category = category;
-                marker.eventDate = eventDate;
+                const RaceStart = parseDate(row.RaceStart);
+                marker.EventType = EventType;
+                marker.RaceStart = RaceStart;
 
                 marker.bindPopup(`
-                    <strong>${row.name || "Unnamed"}</strong><br>
-                    ${row.description || ""}<br>
-                    <em>${category}</em><br>
-                    ${eventDate ? `<strong>Date:</strong> ${eventDate.toDateString()}` : ""}
+                    <strong>${row.RaceName || "Unnamed"}</strong><br>
+                    ${row.RaceURL || ""}<br>
+                    <em>${EventType}</em><br>
+                    ${RaceStart ? `<strong>Date:</strong> ${RaceStart.toDateString()}` : ""}
                 `);
 
-                categoryLayers[category].addLayer(marker);
+                EventTypeLayers[EventType].addLayer(marker);
                 allMarkers.push(marker);
             });
         }
     });
 
-    function toggleCategory(category) {
-        const checkbox = document.getElementById(`check-${category}`);
+    function toggleEventType(EventType) {
+        const checkbox = document.getElementById(`check-${EventType}`);
         if (checkbox.checked) {
-            map.addLayer(categoryLayers[category]);
+            map.addLayer(EventTypeLayers[EventType]);
         } else {
-            map.removeLayer(categoryLayers[category]);
+            map.removeLayer(EventTypeLayers[EventType]);
         }
     }
 
@@ -303,20 +303,20 @@
         const start = parseDate(document.getElementById("startDate").value);
         const end = parseDate(document.getElementById("endDate").value);
 
-        for (const cat in categoryLayers) {
-            categoryLayers[cat].clearLayers();
+        for (const cat in EventTypeLayers) {
+            EventTypeLayers[cat].clearLayers();
         }
 
         allMarkers.forEach(marker => {
-            const cat = marker.category;
+            const cat = marker.EventType;
             const checkbox = document.getElementById(`check-${cat}`);
             let ok = true;
 
-            if (start && marker.eventDate && marker.eventDate < start) ok = false;
-            if (end && marker.eventDate && marker.eventDate > end) ok = false;
+            if (start && marker.RaceStart && marker.RaceStart < start) ok = false;
+            if (end && marker.RaceStart && marker.RaceStart > end) ok = false;
 
             if (ok && checkbox.checked) {
-                categoryLayers[cat].addLayer(marker);
+                EventTypeLayers[cat].addLayer(marker);
             }
         });
     }

@@ -1,4 +1,4 @@
-name,category,latitude,longitude,description,eventDate
+RaceName,EventType,latitude,longitude,RaceURL,DateStart
 Capitolina Dryland,Canicross Race,34.2851647,-85.21773661,<a href='https://runsignup.com/Race/GA/Rome/CapitolinaDrylandChallenge' target='_blank'>Event Info</a>,1/10/2026
 Race Around Red Top,NACC RACE,34.13969543,-84.70049697,<a href='https://nacanicross.com/race-around-red-top-26' target='_blank'>Event Info</a>,3/8/2026
 Steeplechase Stampede,NACC RACE,33.67359615,-83.94333062,<a href='https://nacanicross.com/steeplechase-stampede-25' target='_blank'>Event Info</a>,11/8/2026

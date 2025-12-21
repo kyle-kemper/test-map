@@ -2,192 +2,258 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>CaniX Test Map</title>
+    <title>CaniX Locations Map</title>
 
-    <!-- Leaflet -->
+    <!-- =======================
+         External Libraries
+         ======================= -->
+
+    <!-- Leaflet (map engine) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    <!-- MarkerCluster -->
+    <!-- MarkerCluster (groups nearby markers together) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
-    <!-- PapaParse -->
+    <!-- PapaParse (CSV reader for browser) -->
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
+    <!-- =======================
+         Page Styles
+         ======================= -->
     <style>
-        html, body { height: 100%; margin: 0; padding: 0; }
-        body { font-family: Arial, sans-serif; }
-        #map { height: 80vh; width: 100%; }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #map {
+            height: 80vh;
+            width: 100%;
+        }
+
         #filters {
             display: flex;
             flex-wrap: wrap;
-            overflow-x: auto;
             padding: 12px;
             margin-bottom: 8px;
             background: #f4f4f4;
             font-size: 16px;
         }
+
         .filter-item {
-            flex: 0 0 auto;
             margin-right: 18px;
             display: inline-flex;
             align-items: center;
         }
+
         .filter-item img {
             width: 26px;
             height: 26px;
             margin: 0 6px;
         }
+
         @media (max-width: 480px) {
             #map { height: 70vh; }
             #filters { font-size: 18px; }
         }
     </style>
 </head>
+
 <body>
 
 <h2>CaniX Locations Map</h2>
 
+<!-- =======================
+     Filter Controls
+     ======================= -->
 <div id="filters">
-    <strong>Categories:</strong>&nbsp;<span id="filter-controls"></span>
+    <strong>Categories:</strong>&nbsp;
+    <span id="filter-controls"></span>
+
     <br><br>
+
     <strong>Filter by Date:</strong>&nbsp;
     <input type="date" id="startDate">
     <input type="date" id="endDate">
     <button onclick="applyDateFilter()">Apply</button>
 </div>
 
+<!-- Map container -->
 <div id="map"></div>
 
 <script>
-    const map = L.map('map').setView([39.5, -98.35], 4);
+/* ============================================================
+   1. Map Initialization
+   ============================================================ */
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19
-    }).addTo(map);
+const map = L.map("map").setView([39.5, -98.35], 4); // Continental US
 
-    function customIcon(filename = "default") {
-        let url;
-        switch(filename) {
-            case "nacclogo": url = "icons/nacclogo.png"; break;
-            case "naccmeetup": url = "icons/naccmeetup.png"; break;
-            case "OCR": url = "icons/OCR.png"; break;
-            case "trail": url = "icons/trail.png"; break;
-            default:
-                url = "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png";
-        }
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19
+}).addTo(map);
 
-        return new L.Icon({
-            iconUrl: url,
-            iconSize: [36, 36],
-            iconAnchor: [18, 36],
-            popupAnchor: [0, -34],
-            shadowUrl: null
-        });
-    }
+/* ============================================================
+   2. Icon Configuration
+   ============================================================ */
 
-    const categoryLayers = {};
-    const categoryIcons = {};
-    const allMarkers = [];
+/**
+ * Maps event types to icon filenames (without extension).
+ * Keeps visual identity consistent per category.
+ */
+const iconMapping = {
+    "Canicross Race": "nacclogo",
+    "NACC Meet-Up": "naccmeetup",
+    "Canine OCR": "OCR",
+    "Dog Friendly Trail Race": "trail"
+};
 
-    function parseDate(dateStr) {
-        if (!dateStr) return null;
-        const d = new Date(dateStr);
-        return isNaN(d) ? null : d;
-    }
-
-    const iconMapping = {
-        "Canicross Race": "nacclogo",
-        "NACC Meet-Up": "naccmeetup",
-        "Canine OCR": "OCR",
-        "Dog Friendly Trail Race": "trail"
+/**
+ * Creates a Leaflet icon from a known icon key.
+ */
+function createIcon(key = "default") {
+    const iconUrls = {
+        nacclogo: "icons/nacclogo.png",
+        naccmeetup: "icons/naccmeetup.png",
+        OCR: "icons/OCR.png",
+        trail: "icons/trail.png",
+        default: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png"
     };
 
-    // Load pins2.csv
-    Papa.parse("pins2.csv", {
-        download: true,
-        header: true,
-        complete: function(results) {
-            const filterContainer = document.getElementById("filter-controls");
-
-            results.data.forEach(row => {
-                if (!row.latitude || !row.longitude) return;
-
-                const name = row.RaceName || "Unnamed";
-                const category = row.EventType || "Other";
-                const description = row.RaceURL || "";
-                const eventDate = parseDate(row.StartDate);
-
-                const iconType = iconMapping[category] || "default";
-
-                if (!categoryLayers[category]) {
-                    categoryLayers[category] = L.markerClusterGroup().addTo(map);
-                    categoryIcons[category] = customIcon(iconType);
-
-                    const id = `check-${category}`;
-                    filterContainer.innerHTML += `
-                        <label class="filter-item">
-                            <input type="checkbox" id="${id}" checked onchange="toggleCategory('${category}')">
-                            <img src="${customIcon(iconType).options.iconUrl}">
-                            ${category}
-                        </label>
-                    `;
-                }
-
-                const marker = L.marker(
-                    [parseFloat(row.latitude), parseFloat(row.longitude)],
-                    { icon: categoryIcons[category] }
-                );
-
-                marker.category = category;
-                marker.eventDate = eventDate;
-
-                const popup = `
-                    <strong>${name}</strong><br>
-                    ${description ? `<a href="${description}" target="_blank">Event website</a><br>` : ""}
-                    <em>${category}</em><br>
-                    ${eventDate ? `<strong>Date:</strong> ${eventDate.toDateString()}` : ""}
-                `;
-
-                marker.bindPopup(popup);
-                categoryLayers[category].addLayer(marker);
-                allMarkers.push(marker);
-            });
-        }
+    return new L.Icon({
+        iconUrl: iconUrls[key] || iconUrls.default,
+        iconSize: [36, 36],
+        iconAnchor: [18, 36],
+        popupAnchor: [0, -34]
     });
+}
 
-    function toggleCategory(category) {
-        const checkbox = document.getElementById(`check-${category}`);
-        if (checkbox.checked) {
-            map.addLayer(categoryLayers[category]);
-        } else {
-            map.removeLayer(categoryLayers[category]);
-        }
-    }
+/* ============================================================
+   3. Global Data Stores
+   ============================================================ */
 
-    function applyDateFilter() {
-        const start = parseDate(document.getElementById("startDate").value);
-        const end = parseDate(document.getElementById("endDate").value);
+// One cluster group per category
+const categoryLayers = {};
 
-        for (const cat in categoryLayers) {
-            categoryLayers[cat].clearLayers();
-        }
+// Cached icons so we only create them once
+const categoryIcons = {};
 
-        allMarkers.forEach(marker => {
-            const cat = marker.category;
-            const checkbox = document.getElementById(`check-${cat}`);
-            let ok = true;
+// Flat list of all markers (used for filtering)
+const allMarkers = [];
 
-            if (start && marker.eventDate && marker.eventDate < start) ok = false;
-            if (end && marker.eventDate && marker.eventDate > end) ok = false;
+/* ============================================================
+   4. Utility Functions
+   ============================================================ */
 
-            if (ok && checkbox.checked) {
-                categoryLayers[cat].addLayer(marker);
+/**
+ * Safely parse a date string into a Date object.
+ */
+function parseDate(value) {
+    if (!value) return null;
+    const d = new Date(value);
+    return isNaN(d) ? null : d;
+}
+
+/* ============================================================
+   5. Load CSV Data and Build Map
+   ============================================================ */
+
+Papa.parse("pins2.csv", {
+    download: true,
+    header: true,
+    complete: function(results) {
+        const filterUI = document.getElementById("filter-controls");
+
+        results.data.forEach(row => {
+            // Skip rows without valid coordinates
+            if (!row.latitude || !row.longitude) return;
+
+            const name = row.RaceName || "Unnamed Event";
+            const category = row.EventType || "Other";
+            const url = row.RaceURL || "";
+            const eventDate = parseDate(row.StartDate);
+
+            // Create layer + filter checkbox the first time we see a category
+            if (!categoryLayers[category]) {
+                const iconKey = iconMapping[category] || "default";
+
+                categoryIcons[category] = createIcon(iconKey);
+                categoryLayers[category] = L.markerClusterGroup().addTo(map);
+
+                // Build checkbox UI
+                const checkboxId = `check-${category}`;
+                filterUI.innerHTML += `
+                    <label class="filter-item">
+                        <input type="checkbox" id="${checkboxId}" checked
+                               onchange="toggleCategory('${category}')">
+                        <img src="${categoryIcons[category].options.iconUrl}">
+                        ${category}
+                    </label>
+                `;
             }
+
+            // Create marker
+            const marker = L.marker(
+                [parseFloat(row.latitude), parseFloat(row.longitude)],
+                { icon: categoryIcons[category] }
+            );
+
+            marker.category = category;
+            marker.eventDate = eventDate;
+
+            // Popup content
+            marker.bindPopup(`
+                <strong>${name}</strong><br>
+                ${url ? `<a href="${url}" target="_blank">Event website</a><br>` : ""}
+                <em>${category}</em><br>
+                ${eventDate ? `<strong>Date:</strong> ${eventDate.toDateString()}` : ""}
+            `);
+
+            categoryLayers[category].addLayer(marker);
+            allMarkers.push(marker);
         });
     }
+});
+
+/* ============================================================
+   6. Category Toggle Logic
+   ============================================================ */
+
+function toggleCategory(category) {
+    const checkbox = document.getElementById(`check-${category}`);
+    if (checkbox.checked) {
+        map.addLayer(categoryLayers[category]);
+    } else {
+        map.removeLayer(categoryLayers[category]);
+    }
+}
+
+/* ============================================================
+   7. Date Filtering Logic
+   ============================================================ */
+
+function applyDateFilter() {
+    const start = parseDate(document.getElementById("startDate").value);
+    const end = parseDate(document.getElementById("endDate").value);
+
+    // Clear all markers from cluster layers
+    Object.values(categoryLayers).forEach(layer => layer.clearLayers());
+
+    // Re-add markers that pass the filter
+    allMarkers.forEach(marker => {
+        const checkbox = document.getElementById(`check-${marker.category}`);
+        if (!checkbox.checked) return;
+
+        if (start && marker.eventDate && marker.eventDate < start) return;
+        if (end && marker.eventDate && marker.eventDate > end) return;
+
+        categoryLayers[marker.category].addLayer(marker);
+    });
+}
 </script>
 
 </body>

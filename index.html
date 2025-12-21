@@ -2,22 +2,18 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>CaniX Locations Map</title> /* text shown in browser tab */
+    <title>CaniX Locations Map</title>
 
     <!-- ======================================================
          External Libraries
          ====================================================== -->
-
-    <!-- Leaflet: core mapping library -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    <!-- MarkerCluster: groups markers when zoomed out -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
-    <!-- PapaParse: reads CSV files in-browser -->
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
     <!-- ======================================================
@@ -31,25 +27,19 @@
             font-family: Arial, sans-serif;
         }
 
-        /* --------------------
-           Map container size
-           --------------------
-           This controls ONLY the map height on the page,
-           not marker size or text size.
-        */
+        /* ======================================================
+           🔴 MASTER UI SCALE (CSS SIDE)
+           This must match the JS UI_SCALE value
+           ====================================================== */
+        :root {
+            --ui-scale: 1;
+        }
+
         #map {
-            height: 80vh;  /* Desktop map height */
+            height: 80vh;
             width: 100%;
         }
 
-        /* --------------------
-           Filter bar styling
-           --------------------
-           This controls the text size of:
-           - category labels
-           - date inputs
-           - buttons
-        */
         #filters {
             display: flex;
             flex-wrap: wrap;
@@ -57,7 +47,8 @@
             margin-bottom: 8px;
             background: #f4f4f4;
 
-            font-size: 16px; /* 👈 DESKTOP filter text size */
+            /* Filter bar text scales with UI_SCALE */
+            font-size: calc(16px * var(--ui-scale));
         }
 
         .filter-item {
@@ -67,59 +58,35 @@
         }
 
         .filter-item img {
-            width: 26px;   /* icon shown next to checkbox */
-            height: 26px;
+            width: calc(26px * var(--ui-scale));
+            height: calc(26px * var(--ui-scale));
             margin: 0 6px;
         }
 
-        /* --------------------
-           Popup text sizing
-           --------------------
-           This controls ALL Leaflet popup text
-           unless you override with custom classes.
-        */
+        /* ======================================================
+           Popup text sizing (scales with UI_SCALE)
+           ====================================================== */
         .leaflet-popup-content {
-            font-size: 14px;   /* 👈 DESKTOP popup text size */
+            font-size: calc(14px * var(--ui-scale));
             line-height: 1.4;
         }
 
-        /* ======================================================
-           Mobile Overrides
-           ====================================================== */
-        @media (max-width: 480px) {
-
-            /* Taller map on phones */
-            #map {
-                height: 70vh;
-            }
-
-            /* Bigger UI text for tapping */
-            #filters {
-                font-size: 18px; /* 👈 MOBILE filter text size */
-            }
-
-            /* Bigger popup text for readability */
-            .leaflet-popup-content {
-                font-size: 16px; /* 👈 MOBILE popup text size */
-            }
-        }
-
-        /* --------------------
-           Optional popup element styling
-           -------------------- */
         .popup-title {
-            font-size: 16px;
+            font-size: calc(16px * var(--ui-scale));
             font-weight: bold;
         }
 
         .popup-category {
-            font-size: 13px;
+            font-size: calc(13px * var(--ui-scale));
             opacity: 0.8;
         }
 
+        /* ======================================================
+           Mobile adjustments
+           ====================================================== */
         @media (max-width: 480px) {
-            .popup-title {
-                font-size: 18px;
+            #map {
+                height: 70vh;
             }
         }
     </style>
@@ -127,44 +94,45 @@
 
 <body>
 
-<h2>CaniX Locations Map Dec 21</h2> /* text shown on web page */
+<h2>CaniX Locations Map 21</h2>
 
-<!-- ======================================================
-     Filter Controls (top UI)
-     ====================================================== -->
 <div id="filters">
     <strong>Categories:</strong>&nbsp;
     <span id="filter-controls"></span>
-
     <br><br>
-
     <strong>Filter by Date:</strong>&nbsp;
     <input type="date" id="startDate">
     <input type="date" id="endDate">
     <button onclick="applyDateFilter()">Apply</button>
 </div>
 
-<!-- Map container -->
 <div id="map"></div>
 
 <script>
 /* ============================================================
-   1. Map Initialization
+   🔴 MASTER UI SCALE (JS SIDE)
+   Change THIS ONE VALUE to scale the entire UI
    ============================================================ */
+const UI_SCALE = 1.0;   // try 0.9, 1.1, 1.25, etc.
 
-const map = L.map("map").setView([39.5, -98.35], 4); // Centered on US
+/* Sync JS scale into CSS variable */
+document.documentElement.style.setProperty("--ui-scale", UI_SCALE);
+
+/* ============================================================
+   Map Initialization
+   ============================================================ */
+const map = L.map("map").setView([39.5, -98.35], 4);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19
 }).addTo(map);
 
 /* ============================================================
-   2. Marker Icon Configuration
+   Marker Icon Configuration
    ============================================================ */
 
 /**
- * Maps event categories to icon filenames.
- * Keeps icons consistent across markers and filter UI.
+ * Icon filenames by category
  */
 const iconMapping = {
     "Canicross Race": "nacclogo",
@@ -173,65 +141,70 @@ const iconMapping = {
     "Dog Friendly Trail Race": "trail"
 };
 
+const iconUrls = {
+    nacclogo: "icons/nacclogo.png",
+    naccmeetup: "icons/naccmeetup.png",
+    OCR: "icons/OCR.png",
+    trail: "icons/trail.png",
+    default: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png"
+};
+
+/* ============================================================
+   🔴 ZOOM-AWARE MARKER SIZING LOGIC
+   ============================================================ */
+
 /**
- * Create a Leaflet marker icon.
- *
- * 🔴 THIS IS WHERE MARKER SIZE IS CONTROLLED 🔴
- *
- * Marker size is NOT CSS.
- * Marker size is controlled ONLY here.
+ * Base marker sizes at reference zoom level
+ */
+const BASE_MARKER_SIZE_DESKTOP = 30;
+const BASE_MARKER_SIZE_MOBILE  = 40;
+
+/**
+ * Reference zoom level:
+ * markers will be this size at this zoom
+ */
+const REFERENCE_ZOOM = 6;
+
+/**
+ * Calculate marker size based on:
+ * - desktop vs mobile
+ * - UI_SCALE
+ * - current zoom level
+ */
+function getMarkerSize() {
+    const isMobile = window.innerWidth <= 480;
+    const base = isMobile ? BASE_MARKER_SIZE_MOBILE : BASE_MARKER_SIZE_DESKTOP;
+
+    // Zoom scaling factor
+    const zoomFactor = Math.pow(1.15, map.getZoom() - REFERENCE_ZOOM);
+
+    return base * UI_SCALE * zoomFactor;
+}
+
+/**
+ * Create a Leaflet icon using dynamic size
  */
 function createIcon(key = "default") {
-
-    // Detect small screens (phones)
-    const isMobile = window.innerWidth <= 480;
-
-    // ======================================================
-    // 👇 MAIN MARKER SIZE CONTROLS 👇
-    // Change these two numbers to tune marker size
-    // ======================================================
-    const size = isMobile ? 42 : 32; // mobile : desktop (pixels)
-
-    const iconUrls = {
-        nacclogo: "icons/nacclogo.png",
-        naccmeetup: "icons/naccmeetup.png",
-        OCR: "icons/OCR.png",
-        trail: "icons/trail.png",
-        default: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png"
-    };
+    const size = getMarkerSize();
 
     return new L.Icon({
         iconUrl: iconUrls[key] || iconUrls.default,
-
-        // Actual visible size of the marker
         iconSize: [size, size],
-
-        // Point of the marker that touches the map
-        // Usually half width, full height
         iconAnchor: [size / 2, size],
-
-        // Where the popup opens relative to the marker
         popupAnchor: [0, -size + 4]
     });
 }
 
 /* ============================================================
-   3. Data Containers
+   Data Containers
    ============================================================ */
-
-// One marker cluster group per category
 const categoryLayers = {};
-
-// Cache icons so we only create them once per category
 const categoryIcons = {};
-
-// Flat list of all markers (used for date filtering)
 const allMarkers = [];
 
 /* ============================================================
-   4. Helper Functions
+   Helpers
    ============================================================ */
-
 function parseDate(value) {
     if (!value) return null;
     const d = new Date(value);
@@ -239,19 +212,15 @@ function parseDate(value) {
 }
 
 /* ============================================================
-   5. Load CSV + Build Markers
+   Load CSV + Build Map
    ============================================================ */
-
 Papa.parse("pins2.csv", {
     download: true,
     header: true,
     complete: function(results) {
-
         const filterUI = document.getElementById("filter-controls");
 
         results.data.forEach(row => {
-
-            // Skip rows without valid coordinates
             if (!row.latitude || !row.longitude) return;
 
             const name = row.RaceName || "Unnamed Event";
@@ -259,17 +228,14 @@ Papa.parse("pins2.csv", {
             const url = row.RaceURL || "";
             const eventDate = parseDate(row.StartDate);
 
-            // First time seeing a category → create layer + checkbox
             if (!categoryLayers[category]) {
-
                 const iconKey = iconMapping[category] || "default";
                 categoryIcons[category] = createIcon(iconKey);
                 categoryLayers[category] = L.markerClusterGroup().addTo(map);
 
-                const checkboxId = `check-${category}`;
                 filterUI.innerHTML += `
                     <label class="filter-item">
-                        <input type="checkbox" id="${checkboxId}" checked
+                        <input type="checkbox" id="check-${category}" checked
                                onchange="toggleCategory('${category}')">
                         <img src="${categoryIcons[category].options.iconUrl}">
                         ${category}
@@ -277,7 +243,6 @@ Papa.parse("pins2.csv", {
                 `;
             }
 
-            // Create the marker
             const marker = L.marker(
                 [parseFloat(row.latitude), parseFloat(row.longitude)],
                 { icon: categoryIcons[category] }
@@ -286,7 +251,6 @@ Papa.parse("pins2.csv", {
             marker.category = category;
             marker.eventDate = eventDate;
 
-            // Popup HTML (text size controlled via CSS above)
             marker.bindPopup(`
                 <div class="popup">
                     <div class="popup-title">${name}</div>
@@ -303,9 +267,21 @@ Papa.parse("pins2.csv", {
 });
 
 /* ============================================================
-   6. Category Toggle Logic
+   🔴 Update marker sizes when zoom changes
    ============================================================ */
+map.on("zoomend", () => {
+    for (const category in categoryLayers) {
+        categoryIcons[category] = createIcon(iconMapping[category] || "default");
 
+        categoryLayers[category].eachLayer(marker => {
+            marker.setIcon(categoryIcons[category]);
+        });
+    }
+});
+
+/* ============================================================
+   Filters
+   ============================================================ */
 function toggleCategory(category) {
     const checkbox = document.getElementById(`check-${category}`);
     checkbox.checked
@@ -313,18 +289,12 @@ function toggleCategory(category) {
         : map.removeLayer(categoryLayers[category]);
 }
 
-/* ============================================================
-   7. Date Filter Logic
-   ============================================================ */
-
 function applyDateFilter() {
     const start = parseDate(document.getElementById("startDate").value);
     const end = parseDate(document.getElementById("endDate").value);
 
-    // Clear all cluster layers
     Object.values(categoryLayers).forEach(layer => layer.clearLayers());
 
-    // Re-add markers that pass date + category filters
     allMarkers.forEach(marker => {
         const checkbox = document.getElementById(`check-${marker.category}`);
         if (!checkbox.checked) return;

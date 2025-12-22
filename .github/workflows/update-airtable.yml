@@ -1,0 +1,29 @@
+name: Update Airtable CSV
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # every 5 minutes
+  workflow_dispatch:        # manual run button
+
+jobs:
+  update-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run Airtable export script
+        shell: pwsh
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+        run: |
+          pwsh ./scripts/airtable_to_csv.ps1
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add races_kylecopy.csv
+          git diff --cached --quiet || git commit -m "Auto-update Airtable CSV"
+          git push

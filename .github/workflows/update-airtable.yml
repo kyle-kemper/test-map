@@ -1,4 +1,6 @@
 name: Update Airtable CSV
+permissions:
+  contents: write
 
 on:
   schedule:

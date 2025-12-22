@@ -11,21 +11,18 @@ on:
 jobs:
   update-csv:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Run Airtable export script
         shell: pwsh
         env:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
         run: |
           pwsh ./scripts/airtable_to_csv.ps1
-
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add airtable_fetched.csv
+          git add -A
           git diff --cached --quiet || git commit -m "Auto-update Airtable CSV"
           git push

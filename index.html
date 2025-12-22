@@ -94,7 +94,7 @@
 
 <body>
 
-<h2>CaniX Locations Map 21</h2>
+<h2>CaniX Locations Map v2025-12-21pm</h2>
 
 <div id="filters">
     <strong>Categories:</strong>&nbsp;
@@ -110,7 +110,35 @@
 
 <script>
 /* ============================================================
-   🔴 MASTER UI SCALE (JS SIDE)
+   🔴 MASTER UI SCALE (JS SIDE)name: Update Airtable CSV
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  update-csv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Airtable export script
+        shell: pwsh
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+        run: |
+          pwsh ./scripts/airtable_to_csv.ps1
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Auto-update Airtable CSV"
+          git push
+
    Change THIS ONE VALUE to scale the entire UI
    ============================================================ */
 const UI_SCALE = 1.0;   // try 0.9, 1.1, 1.25, etc.
@@ -214,7 +242,7 @@ function parseDate(value) {
 /* ============================================================
    Load CSV + Build Map
    ============================================================ */
-Papa.parse("pins2.csv", {
+Papa.parse("airtable_fetched.csv", {
     download: true,
     header: true,
     complete: function(results) {

@@ -1,19 +1,19 @@
 name: Update Airtable CSV
+
 permissions:
   contents: write
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   # every 5 minutes
-  workflow_dispatch:        # manual run button
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 jobs:
   update-csv:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Run Airtable export script
         shell: pwsh

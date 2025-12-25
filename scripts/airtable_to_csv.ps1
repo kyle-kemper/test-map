@@ -54,7 +54,13 @@ try {
 
             if ($record.fields) {
                 foreach ($prop in $record.fields.PSObject.Properties) {
-                    $row[$prop.Name] = $prop.Value
+
+                    # Flatten arrays (multi-selects, linked records)
+                    if ($prop.Value -is [Array]) {
+                        $row[$prop.Name] = ($prop.Value -join "; ")
+                    } else {
+                        $row[$prop.Name] = $prop.Value
+                    }
                 }
             }
 
@@ -69,9 +75,24 @@ try {
     Write-Host ""
 
     # ============================
+    # NORMALIZE COLUMNS
+    # ============================
+    $allColumns = $allRecords |
+        ForEach-Object { $_.PSObject.Properties.Name } |
+        Sort-Object -Unique
+
+    $normalized = foreach ($record in $allRecords) {
+        $row = [ordered]@{}
+        foreach ($col in $allColumns) {
+            $row[$col] = $record.$col
+        }
+        [PSCustomObject]$row
+    }
+
+    # ============================
     # EXPORT TO CSV
     # ============================
-    $allRecords | Export-Csv -Path $OUTPUT_CSV -NoTypeInformation -Encoding UTF8
+    $normalized | Export-Csv -Path $OUTPUT_CSV -NoTypeInformation -Encoding UTF8
 
     Write-Host "📄 CSV written to:"
     Write-Host (Resolve-Path $OUTPUT_CSV)

@@ -221,8 +221,10 @@ Papa.parse("airtable_fetched.csv", {
         const filterUI = document.getElementById("filter-controls");
 
         results.data.forEach(row => {
-            if (!row.Latitude || !row.Longitude) return;
+            const lat = parseFloat(row.lat || row.Latitude || row.latitude);
+            const lng = parseFloat(row.lng || row.Longitude || row.longitude);
 
+if (isNaN(lat) || isNaN(lng)) return;
             const name = row.RaceName || "Unnamed Event";
             const category = row.EventType || "Other";
             const url = row.RaceURL || "";
@@ -244,7 +246,7 @@ Papa.parse("airtable_fetched.csv", {
             }
 
             const marker = L.marker(
-                [parseFloat(row.Latitude), parseFloat(row.Longitude)],
+                [lat, lng],
                 { icon: categoryIcons[category] }
             );
 

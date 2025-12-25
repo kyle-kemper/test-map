@@ -101,7 +101,7 @@
     <span id="filter-controls"></span>
     <br><br>
     <strong>Filter by Date:</strong>&nbsp;
-    <input type="date" id="startDate">
+    <input type="date" id="DateStart">
     <input type="date" id="endDate">
     <button onclick="applyDateFilter()">Apply</button>
 </div>
@@ -226,7 +226,7 @@ Papa.parse("pins2.csv", {
             const name = row.RaceName || "Unnamed Event";
             const category = row.EventType || "Other";
             const url = row.RaceURL || "";
-            const eventDate = parseDate(row.StartDate);
+            const eventDate = parseDate(row.DateStart);
 
             if (!categoryLayers[category]) {
                 const iconKey = iconMapping[category] || "default";
@@ -290,7 +290,7 @@ function toggleCategory(category) {
 }
 
 function applyDateFilter() {
-    const start = parseDate(document.getElementById("startDate").value);
+    const start = parseDate(document.getElementById("DateStart").value);
     const end = parseDate(document.getElementById("endDate").value);
 
     Object.values(categoryLayers).forEach(layer => layer.clearLayers());

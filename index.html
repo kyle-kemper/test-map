@@ -221,7 +221,7 @@ Papa.parse("pins2.csv", {
         const filterUI = document.getElementById("filter-controls");
 
         results.data.forEach(row => {
-            if (!row.latitude || !row.longitude) return;
+            if (!row.Latitude || !row.Longitude) return;
 
             const name = row.RaceName || "Unnamed Event";
             const category = row.EventType || "Other";
@@ -244,7 +244,7 @@ Papa.parse("pins2.csv", {
             }
 
             const marker = L.marker(
-                [parseFloat(row.latitude), parseFloat(row.longitude)],
+                [parseFloat(row.Latitude), parseFloat(row.Longitude)],
                 { icon: categoryIcons[category] }
             );
 

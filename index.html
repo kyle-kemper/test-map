@@ -94,7 +94,7 @@
 
 <body>
 
-<h2>CaniX Locations Map vDec 21</h2>
+<h2>CaniX Locations Map vDec 24</h2>
 
 <div id="filters">
     <strong>Categories:</strong>&nbsp;
@@ -214,7 +214,7 @@ function parseDate(value) {
 /* ============================================================
    Load CSV + Build Map
    ============================================================ */
-Papa.parse("pins2.csv", {
+Papa.parse("airtable_fetched.csv", {
     download: true,
     header: true,
     complete: function(results) {

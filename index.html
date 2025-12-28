@@ -267,7 +267,7 @@ if (isNaN(lat) || isNaN(lng)) return;
         });
     }
 });
-/* kyle test lines here to stop sign */
+/* Additional lines added 2025-12-27 to add Ambassador events */
     Papa.parse("ambassador_airtable_fetched.csv", {
     download: true,
     header: true,
@@ -279,9 +279,9 @@ if (isNaN(lat) || isNaN(lng)) return;
             const lng = parseFloat(row.lng || row.Longitude || row.longitude);
 
 if (isNaN(lat) || isNaN(lng)) return;
-            const name = row.RaceName || "Unnamed Event";
+            const name = row.AmbNameHeading || "Unnamed Event";
             const category = row.EventType || "Other";
-            const url = row.RaceURL || "";
+            const url = row.FacebookURL || "";
             const eventDate = parseDate(row.DateStart);
 
             if (!categoryLayers[category]) {

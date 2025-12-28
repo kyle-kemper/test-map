@@ -136,7 +136,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
  */
 const iconMapping = {
     "Canicross Race": "canicrosslogo",
-    "NACC Meet-Up": "naccmeetup",
+    "Ambassador Group Meetup": "naccmeetup",
     "Canine OCR": "OCR",
     "Dog Friendly Trail Race": "trail"
 };
@@ -215,6 +215,60 @@ function parseDate(value) {
    Load CSV + Build Map
    ============================================================ */
 Papa.parse("races_airtable_fetched.csv", {
+    download: true,
+    header: true,
+    complete: function(results) {
+        const filterUI = document.getElementById("filter-controls");
+
+        results.data.forEach(row => {
+            const lat = parseFloat(row.lat || row.Latitude || row.latitude);
+            const lng = parseFloat(row.lng || row.Longitude || row.longitude);
+
+if (isNaN(lat) || isNaN(lng)) return;
+            const name = row.RaceName || "Unnamed Event";
+            const category = row.EventType || "Other";
+            const url = row.RaceURL || "";
+            const eventDate = parseDate(row.DateStart);
+
+            if (!categoryLayers[category]) {
+                const iconKey = iconMapping[category] || "default";
+                categoryIcons[category] = createIcon(iconKey);
+                categoryLayers[category] = L.markerClusterGroup().addTo(map);
+
+                filterUI.innerHTML += `
+                    <label class="filter-item">
+                        <input type="checkbox" id="check-${category}" checked
+                               onchange="toggleCategory('${category}')">
+                        <img src="${categoryIcons[category].options.iconUrl}">
+                        ${category}
+                    </label>
+                `;
+            }
+
+            const marker = L.marker(
+                [lat, lng],
+                { icon: categoryIcons[category] }
+            );
+
+            marker.category = category;
+            marker.eventDate = eventDate;
+
+            marker.bindPopup(`
+                <div class="popup">
+                    <div class="popup-title">${name}</div>
+                    ${url ? `<a href="${url}" target="_blank">Event website</a><br>` : ""}
+                    <div class="popup-category">${category}</div>
+                    ${eventDate ? `<strong>Date:</strong> ${eventDate.toDateString()}` : ""}
+                </div>
+            `);
+
+            categoryLayers[category].addLayer(marker);
+            allMarkers.push(marker);
+        });
+    }
+});
+/* kyle test lines here to stop sign */
+    Papa.parse("ambassador_airtable_fetched.csv", {
     download: true,
     header: true,
     complete: function(results) {

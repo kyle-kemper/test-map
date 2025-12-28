@@ -3,8 +3,8 @@
 # ============================
 $AIRTABLE_TOKEN = $env:AIRTABLE_TOKEN
 $BASE_ID = "appN2ESAm2bjJ4esB"
-$TABLE_NAME = "races_kylecopy"
-$OUTPUT_CSV = "races_airtable_fetched.csv"
+$TABLE_NAME = "ambassador_kylecopy"
+$OUTPUT_CSV = "ambassador_airtable_fetched.csv"
 
 # ============================
 # HEADERS

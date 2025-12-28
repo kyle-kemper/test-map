@@ -1,4 +1,4 @@
-name: Update Races Airtable CSV
+name: Update Ambassador Airtable CSV
 
 permissions:
   contents: write

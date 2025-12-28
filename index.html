@@ -32,7 +32,7 @@
            This must match the JS UI_SCALE value
            ====================================================== */
         :root {
-            --ui-scale: 1;
+            --ui-scale: 1; 
         }
 
         #map {
@@ -113,7 +113,7 @@
    🔴 MASTER UI SCALE (JS SIDE)
    Change THIS ONE VALUE to scale the entire UI
    ============================================================ */
-const UI_SCALE = 2.0;   // try 0.9, 1.1, 1.25, etc.
+const UI_SCALE = 1.5;   // Default 1.0, try 0.9, 1.1, 1.25, etc.
 
 /* Sync JS scale into CSS variable */
 document.documentElement.style.setProperty("--ui-scale", UI_SCALE);

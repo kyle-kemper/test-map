@@ -2,8 +2,8 @@
 # CONFIG (SET THESE FIRST)
 # ============================
 $AIRTABLE_TOKEN = $env:AIRTABLE_TOKEN
-$BASE_ID = "appN2ESAm2bjJ4esB"
-$TABLE_NAME = "races_kylecopy"
+$BASE_ID = "appmoMytIhA7J2G1b"
+$TABLE_NAME = "RaceBoard"
 $OUTPUT_CSV = "races_airtable_fetched.csv"
 
 # ============================

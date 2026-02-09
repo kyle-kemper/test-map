@@ -2,9 +2,11 @@
 # CONFIG (SET THESE FIRST)
 # ============================
 $AIRTABLE_TOKEN = $env:AIRTABLE_TOKEN
-$BASE_ID = "appN2ESAm2bjJ4esB"
-$TABLE_NAME = "ambassador_kylecopy"
-$OUTPUT_CSV = "ambassador_airtable_fetched.csv"
+$BASE_ID = "appmoMytIhA7J2G1b"
+$TABLE_NAME = "RaceBoard"
+$OUTPUT_CSV = "ambassador_ActiveDates.csv"
+$VIEW_NAME = "Ambassador_ActiveDates"
+$encodedView = [System.Uri]::EscapeDataString($VIEW_NAME)
 
 # ============================
 # HEADERS
@@ -25,7 +27,10 @@ $encodedTableName = [System.Uri]::EscapeDataString($TABLE_NAME)
 # ============================
 # BASE URL (SAFE CONCAT)
 # ============================
-$baseUrl = "https://api.airtable.com/v0/" + $BASE_ID + "/" + $encodedTableName + "?pageSize=100"
+$baseUrl = "https://api.airtable.com/v0/" +
+           $BASE_ID + "/" +
+           $encodedTableName +
+           "?pageSize=100&view=$encodedView"
 
 # ============================
 # FETCH ALL RECORDS

@@ -269,7 +269,7 @@ if (isNaN(lat) || isNaN(lng)) return;
     }
 });
 /* Additional lines added 2025-12-27 to add Ambassador events */
-    Papa.parse("ambassador_airtable_fetched.csv", {
+    Papa.parse("Ambassador_ActiveDates.csv", {
     download: true,
     header: true,
     complete: function(results) {

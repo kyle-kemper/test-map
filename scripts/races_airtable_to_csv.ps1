@@ -4,7 +4,7 @@
 $AIRTABLE_TOKEN = $env:AIRTABLE_TOKEN
 $BASE_ID = "appmoMytIhA7J2G1b"
 $TABLE_NAME = "RaceBoard"
-$OUTPUT_CSV = "races_airtable_fetched.csv"
+$OUTPUT_CSV = "NonAmbassador_ActiveDates copy.csv"
 $VIEW_NAME = "NonAmbassador_ActiveDates copy"
 $encodedView = [System.Uri]::EscapeDataString($VIEW_NAME)
 

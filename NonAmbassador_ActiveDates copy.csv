@@ -1,156 +1,131 @@
-"A_City","A_Street","A_Zip","Address","AirtableRecordId","ambasadorVerifyForm","AmbDescription","AmbNameHeading","Country","created","DateFormula","DateStart","day of week","EventType","Geocoded","Latitude","LocationHeading","Longitude","Number","ProfanityChecker","PublishTimeUpdated","RaceID","RaceName","RaceRecID","RaceURL","SafeToPublish","SentToZite","State","TimeDurationTemp","TimeEnd","TimeStart"
-,,,"19300 Ritter Parkway Trail
-Lakeville, Minnesota 55044
-United States
-","recVi4ShZKd5lFr2O","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recVi4ShZKd5lFr2O","
-","Event by:  ","United States","12/13/2025 22:51:25","11/14/26","2026-11-14","Sat","Canicross Race","True","44.673069850000005","Location:  Minnesota","-93.30000840978047","396","True","02/18/2026 18:11:59","Race396_11/14/26","Run the Ritter 2026","recVi4ShZKd5lFr2O","https://runtheritter.com/","True","True","Minnesota","28800",,"28800"
-"Hebron","East 142nd Ave.","46341","East 142nd Ave.
-Hebron, Indiana 46341
-United States
-","rec0x3dMwmDaknByn","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=rec0x3dMwmDaknByn","
-","Event by:  ","United States","05/24/2026 15:43:46","11/14/26","2026-11-14","Sat","Dog Friendly Trail Race","True","41.3186482","Location:  Indiana","-87.2003091","567","True","05/24/2026 15:43:51","Race567_11/14/26","Bigfoot Half Trail Run","rec0x3dMwmDaknByn","https://raceroster.com/events/2026/112627/bigfoot-half-trail-run","True",,"Indiana",,,"28800"
-"Palatine","Deer Grove-East Picnic Grove #4","60074","Deer Grove-East Picnic Grove #4
-Palatine, Illinois 60074
-United States
-","reccJd1L7BlHP7oBs","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=reccJd1L7BlHP7oBs","
-","Event by:  ","United States","07/11/2026 16:34:14","11/14/26","2026-11-14","Sat","Canicross Race","True","42.1105502","Location:  Illinois","-88.0434304","614","True","07/11/2026 16:34:20","Race614_11/14/26","Nikki Cozzi-Carso Scholarship Annual 5K Presented by Chicago Canicross Club","reccJd1L7BlHP7oBs","https://www.raceentry.com/nikki-cozzi-carso-scholarship-annual-5k-presented-by-chicago-canicross-club/race-information?fbclid=IwY2xjawS_T0tleHRuA2FlbQIxMABicmlkETJOMTBVZ0doVDdHb09IYXNPc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgbSVT0tyBE3mpNrXPD91A8zFXTjQG8yQSj35ChsjV85cofU42x-ItXV2pFs_aem_r3RsfVl3SL2aVKepIS9f6A&brid=YWdncwFWVpenPIR9ciCj9Geml4uP","True",,"Illinois",,,
-"Belmont","6800 Cannonsburg Rd NE","49306","6800 Cannonsburg Rd NE
-Belmont, Michigan 49306
-United States
-","recqYX5Sfwqo0iTvX","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recqYX5Sfwqo0iTvX","
-","Event by:  ","United States","09/24/2026 17:06:37","11/14/26","2026-11-14","Sat","Dog Friendly Trail Race","True","43.0755822","Location:  Michigan","-85.6091987","701","True","09/24/2026 17:06:43","Race701_11/14/26","Humane Hustle","recqYX5Sfwqo0iTvX","https://runsignup.com/Race/MI/Belmont/HumaneHustle?fbclid=IwY2xjawUiN5lleHRuA2FlbQIxMQBwZG9mAXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4HKssFBHV-SEf-uzGwh_0Lgf6C_Jcf4cJ9BRWwKsW_iPnhq8UVuaPAoFUr1A_aem_PczGHi73PCYRHV48CrRkEQ","True",,"Michigan",,,
-"Sneads Ferry","514 Pete’s Way","28460","514 Pete’s Way
-Sneads Ferry, North Carolina 28460
-United States
-","recJr5eh9QmoCiavh","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recJr5eh9QmoCiavh","
-","Event by:  ","United States","10/07/2026 03:49:26","11/14/26","2026-11-14","Sat","Canine OCR","True","34.5526655","Location:  North Carolina","-77.3971839","712","True","10/07/2026 03:49:45","Race712_11/14/26","Mutts Mud & Mayhem","recJr5eh9QmoCiavh","https://muttsmudmayhem.com/#register","True",,"North Carolina",,,"25200"
+"A_City","A_Street","A_Zip","Address","AirtableRecordId","ambasadorVerifyForm","AmbDescription","AmbNameHeading","Country","created","DateFormula","DateStart","day of week","EventType","Geocoded","Latitude","LocationHeading","Longitude","Number","ProfanityChecker","PublishTimeUpdated","RaceID","RaceName","RaceRecID","RaceURL","SafeToPublish","SentToZite","State","TimeEnd","TimeStart"
 "Orange City","Blue Spring State Park","32763","Blue Spring State Park
 Orange City, Florida 32763
 United States
 ","rechvkBSZclYwKXkK","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=rechvkBSZclYwKXkK","
-","Event by:  ","United States","08/17/2026 20:50:49","11/15/26","2026-11-15","Sun","Dog Friendly Trail Race","True","28.9488761","Location:  Florida","-81.2986741","658","True","08/17/2026 20:50:56","Race658_11/15/26","Save the Manatees 5k","rechvkBSZclYwKXkK","https://runsignup.com/Race/FL/OrangeCity/SaveTheManateeK?fbclid=IwY2xjawTwR_pwZG9mBWV4dG4DYWVtAjExAHNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR6kilTHA3tKQ4iIHzhZItDAZhF0zNbBdWEJv7gmBCGzy94i1Dp-_RBrwKZrnw_aem_G-cTeLm7F3T4NoUwkPlNCg","True",,"Florida",,,
+","Event by:  ","United States","08/17/2026 20:50:49","11/15/26","2026-11-15","Sun","Dog Friendly Trail Race","True","28.9488761","Location:  Florida","-81.2986741","658","True","08/17/2026 20:50:56","Race658_11/15/26","Save the Manatees 5k","rechvkBSZclYwKXkK","https://runsignup.com/Race/FL/OrangeCity/SaveTheManateeK?fbclid=IwY2xjawTwR_pwZG9mBWV4dG4DYWVtAjExAHNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR6kilTHA3tKQ4iIHzhZItDAZhF0zNbBdWEJv7gmBCGzy94i1Dp-_RBrwKZrnw_aem_G-cTeLm7F3T4NoUwkPlNCg","True",,"Florida",,
 "Birmingham","2011 Frankfurt Dr","35211","2011 Frankfurt Dr
 Birmingham, Alabama 35211
 United States
 ","rectBfVoY7IGye0z5","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=rectBfVoY7IGye0z5","
-","Event by:  ","United States","10/20/2026 14:13:06","11/15/26","2026-11-15","Sun","Dog Friendly Trail Race","True","33.4430789","Location:  Alabama","-86.8660709","730","True","10/20/2026 14:13:30","Race730_11/15/26","WeHo Food Market 5K","rectBfVoY7IGye0z5","https://givebutter.com/wehofoodmarket5k?fbclid=IwY2xjawU8oFNleHRuA2FlbQIxMABwZG9mBWJyaWQRMVJLbkdodVZrYVNCempzUEJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEecDE8LmEU7jpSHhiCdjx1Ypa5y2wI9d7MI_PRzLGU_qeeswiYpigRMKL-34c_aem_7-IMm_2T-VcgIE7LW8dlYg","True",,"Alabama",,,"27000"
+","Event by:  ","United States","10/20/2026 14:13:06","11/15/26","2026-11-15","Sun","Dog Friendly Trail Race","True","33.4430789","Location:  Alabama","-86.8660709","730","True","10/20/2026 14:13:30","Race730_11/15/26","WeHo Food Market 5K","rectBfVoY7IGye0z5","https://givebutter.com/wehofoodmarket5k?fbclid=IwY2xjawU8oFNleHRuA2FlbQIxMABwZG9mBWJyaWQRMVJLbkdodVZrYVNCempzUEJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEecDE8LmEU7jpSHhiCdjx1Ypa5y2wI9d7MI_PRzLGU_qeeswiYpigRMKL-34c_aem_7-IMm_2T-VcgIE7LW8dlYg","True",,"Alabama",,"27000"
 "Belden","2139 Faulkner Rd","38826","2139 Faulkner Rd
 Belden, Mississippi 38826
 United States
 ","recd07R0cwKFByMqX","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recd07R0cwKFByMqX","
-","Event by:  ","United States","09/21/2026 11:40:00","11/21/26","2026-11-21","Sat","Dog Friendly Trail Race","True","34.3103831","Location:  Mississippi","-88.7883888","696","True","09/21/2026 11:40:12","Race696_11/21/26","Tupelo Trail Shuffle","recd07R0cwKFByMqX","https://ultrasignup.com/register.aspx?did=141587","True",,"Mississippi",,,"28800"
+","Event by:  ","United States","09/21/2026 11:40:00","11/21/26","2026-11-21","Sat","Dog Friendly Trail Race","True","34.3103831","Location:  Mississippi","-88.7883888","696","True","09/21/2026 11:40:12","Race696_11/21/26","Tupelo Trail Shuffle","recd07R0cwKFByMqX","https://ultrasignup.com/register.aspx?did=141587","True",,"Mississippi",,"28800"
 "cook","Dog Mountain Trail","98605","Dog Mountain Trail
 cook, Washington 98605
 United States
 ","recVZ8jeweXVdqfnm","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recVZ8jeweXVdqfnm","
-","Event by:  ","United States","02/26/2026 18:33:46","11/22/26","2026-11-22","Sun","Dog Friendly Trail Race","True","45.7342117","Location:  Washington","-121.5167437","463","True","02/26/2026 18:33:53","Race463_11/22/26","The Ruff 7 mi","recVZ8jeweXVdqfnm","https://elevatedtrailracing.com/the-ruff-2/","True","True","Washington",,,
+","Event by:  ","United States","02/26/2026 18:33:46","11/22/26","2026-11-22","Sun","Dog Friendly Trail Race","True","45.7342117","Location:  Washington","-121.5167437","463","True","02/26/2026 18:33:53","Race463_11/22/26","The Ruff 7 mi","recVZ8jeweXVdqfnm","https://elevatedtrailracing.com/the-ruff-2/","True","True","Washington",,
 "Dowagiac","57186 Dailey Rd.","49047","57186 Dailey Rd.
 Dowagiac, Michigan 49047
 United States
 ","recDT4APet3LlvcAd","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recDT4APet3LlvcAd","
-","Event by:  ","United States","05/24/2026 03:10:55","11/22/26","2026-11-22","Sun","Dog Friendly Trail Race","True","41.965697","Location:  Michigan","-86.087914","564","True","05/24/2026 03:11:03","Race564_11/22/26","Dowagiac All Trail Turkey Trot","recDT4APet3LlvcAd","https://runsignup.com/Race/MI/Dowagiac/DowagiacTurkeyTrot","True",,"Michigan",,,"46800"
+","Event by:  ","United States","05/24/2026 03:10:55","11/22/26","2026-11-22","Sun","Dog Friendly Trail Race","True","41.965697","Location:  Michigan","-86.087914","564","True","05/24/2026 03:11:03","Race564_11/22/26","Dowagiac All Trail Turkey Trot","recDT4APet3LlvcAd","https://runsignup.com/Race/MI/Dowagiac/DowagiacTurkeyTrot","True",,"Michigan",,"46800"
 "Faust",,,"
 Faust, Utah 
 United States
 ","recPa61bwb6PGrkUg","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recPa61bwb6PGrkUg","
-","Event by:  ","United States","02/24/2026 22:24:08","11/26/26","2026-11-26","Thu","Dog Friendly Trail Race","True","40.114027","Location:  Utah","-112.554867","454","True","02/24/2026 22:24:12","Race454_11/26/26","Pony Express Trail Run 50 mi and 100 mi","recPa61bwb6PGrkUg","https://ultrasignup.com/register.aspx?did=132519","True","True","Utah",,,
+","Event by:  ","United States","02/24/2026 22:24:08","11/26/26","2026-11-26","Thu","Dog Friendly Trail Race","True","40.114027","Location:  Utah","-112.554867","454","True","02/24/2026 22:24:12","Race454_11/26/26","Pony Express Trail Run 50 mi and 100 mi","recPa61bwb6PGrkUg","https://ultrasignup.com/register.aspx?did=132519","True","True","Utah",,
 "Bonita","4548 Sweetwater Rd","91902","4548 Sweetwater Rd
 Bonita, California 91902
 United States
 ","recIPr6mBDLjo7OG9","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recIPr6mBDLjo7OG9","
-","Event by:  ","United States","11/07/2026 19:47:30","11/26/26","2026-11-26","Thu","Dog Friendly Trail Race","True","32.6767023","Location:  California","-117.0210147","752","True","11/07/2026 19:47:52","Race752_11/26/26","Thankful Paws Turkey Trot","recIPr6mBDLjo7OG9","https://runsignup.com/Race/CA/Bonita/ThankfulPawsTurkeyTrot","True",,"California",,,"28800"
+","Event by:  ","United States","11/07/2026 19:47:30","11/26/26","2026-11-26","Thu","Dog Friendly Trail Race","True","32.6767023","Location:  California","-117.0210147","752","True","11/07/2026 19:47:52","Race752_11/26/26","Thankful Paws Turkey Trot","recIPr6mBDLjo7OG9","https://runsignup.com/Race/CA/Bonita/ThankfulPawsTurkeyTrot","True",,"California",,"28800"
 "Cumberland","1464 Diamond Hill Rd, Cumberland, RI 02864","02864","1464 Diamond Hill Rd, Cumberland, RI 02864
 Cumberland, Rhode Island 02864
 United States
 ","recWAjR2TEHoRNOaN","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recWAjR2TEHoRNOaN","
-","Event by:  ","United States","07/01/2026 13:58:57","11/28/26","2026-11-28","Sat","Dog Friendly Trail Race","True","41.9667656","Location:  Rhode Island","-71.4328363","599","True","07/01/2026 13:59:03","Race599_11/28/26","F.I.T Turkey Trot","recWAjR2TEHoRNOaN","https://runsignup.com/Race/RI/Cumberland/FITTrailFecta","True",,"Rhode Island",,,"28800"
+","Event by:  ","United States","07/01/2026 13:58:57","11/28/26","2026-11-28","Sat","Dog Friendly Trail Race","True","41.9667656","Location:  Rhode Island","-71.4328363","599","True","07/01/2026 13:59:03","Race599_11/28/26","F.I.T Turkey Trot","recWAjR2TEHoRNOaN","https://runsignup.com/Race/RI/Cumberland/FITTrailFecta","True",,"Rhode Island",,"28800"
 "Holly Springs","2401 Grigsby Ave","27540","2401 Grigsby Ave
 Holly Springs, North Carolina 27540
 United States
 ","recxhX0qCijgFo0sK","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recxhX0qCijgFo0sK","
-","Event by:  ","United States","07/11/2026 16:20:14","12/05/26","2026-12-05","Sat","Canicross Race","True","35.6393051","Location:  North Carolina","-78.814941","612","True","07/11/2026 16:20:19","Race612_12/05/26","Mushing Mutts Canicross race","recxhX0qCijgFo0sK","https://runsignup.com/Race/NC/HollySprings/MushingMuttsCanicrossDogFriendly5k","True",,"North Carolina",,,
+","Event by:  ","United States","07/11/2026 16:20:14","12/05/26","2026-12-05","Sat","Canicross Race","True","35.6393051","Location:  North Carolina","-78.814941","612","True","07/11/2026 16:20:19","Race612_12/05/26","Mushing Mutts Canicross race","recxhX0qCijgFo0sK","https://runsignup.com/Race/NC/HollySprings/MushingMuttsCanicrossDogFriendly5k","True",,"North Carolina",,
 "YORK","274 HESS FARM RD","17407","274 HESS FARM RD
 YORK, Pennsylvania 17407
 United States
 ","recawt2nrelmCHysG","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recawt2nrelmCHysG","
-","Event by:  ","United States","11/09/2026 14:42:36","12/05/26","2026-12-05","Sat","Dog Friendly Trail Race","True","39.8877127","Location:  Pennsylvania","-76.7027875","753","True","11/09/2026 14:42:44","Race753_12/05/26","REDMAN 9 MILER","recawt2nrelmCHysG","https://ultrasignup.com/register.aspx?did=142099","True",,"Pennsylvania",,,"36000"
+","Event by:  ","United States","11/09/2026 14:42:36","12/05/26","2026-12-05","Sat","Dog Friendly Trail Race","True","39.8877127","Location:  Pennsylvania","-76.7027875","753","True","11/09/2026 14:42:44","Race753_12/05/26","REDMAN 9 MILER","recawt2nrelmCHysG","https://ultrasignup.com/register.aspx?did=142099","True",,"Pennsylvania",,"36000"
 "Haverford","9000 Parkview Dr","19041","9000 Parkview Dr
 Haverford, Pennsylvania 19041
 United States
 ","recNupb18stymS16n","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recNupb18stymS16n","
-","Event by:  ","United States","11/09/2026 14:46:43","12/05/26","2026-12-05","Sat","Dog Friendly Trail Race","True","39.993252","Location:  Pennsylvania","-75.3438752","755","True","11/09/2026 14:46:48","Race755_12/05/26","CHILLY TRAIL RUN","recNupb18stymS16n","https://runsignup.com/Race/PA/Haverford/ChillyTrailRun5K","True",,"Pennsylvania",,,"32400"
+","Event by:  ","United States","11/09/2026 14:46:43","12/05/26","2026-12-05","Sat","Dog Friendly Trail Race","True","39.993252","Location:  Pennsylvania","-75.3438752","755","True","11/09/2026 14:46:48","Race755_12/05/26","CHILLY TRAIL RUN","recNupb18stymS16n","https://runsignup.com/Race/PA/Haverford/ChillyTrailRun5K","True",,"Pennsylvania",,"32400"
 "SOUTH PARK TOWNSHIP","1888 BROWNSVILLE RD","15129","1888 BROWNSVILLE RD
 SOUTH PARK TOWNSHIP, Pennsylvania 15129
 United States
 ","recsbl9lJwzgNNS4R","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recsbl9lJwzgNNS4R","
-","Event by:  ","United States","11/09/2026 14:45:40","12/06/26","2026-12-06","Sun","Dog Friendly Trail Race","True","40.2876036","Location:  Pennsylvania","-80.0033412","754","True","11/09/2026 14:45:46","Race754_12/06/26","The Deerslayer Trail Run","recsbl9lJwzgNNS4R","http://gprrc.com/schedule-of-events/","True",,"Pennsylvania",,,"36000"
+","Event by:  ","United States","11/09/2026 14:45:40","12/06/26","2026-12-06","Sun","Dog Friendly Trail Race","True","40.2876036","Location:  Pennsylvania","-80.0033412","754","True","11/09/2026 14:45:46","Race754_12/06/26","The Deerslayer Trail Run","recsbl9lJwzgNNS4R","http://gprrc.com/schedule-of-events/","True",,"Pennsylvania",,"36000"
 "Cumberland ","1464 Diamond Hill Rd, Cumberland, RI 02864","02864","1464 Diamond Hill Rd, Cumberland, RI 02864
 Cumberland , Rhode Island 02864
 United States
 ","recAf8CbYa04kLcZi","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recAf8CbYa04kLcZi","
-","Event by:  ","United States","07/01/2026 14:00:14","12/12/26","2026-12-12","Sat","Dog Friendly Trail Race","True","41.9667656","Location:  Rhode Island","-71.4328363","600","True","07/01/2026 14:00:18","Race600_12/12/26","F.I.T.mas Holiday Trail Race","recAf8CbYa04kLcZi","https://runsignup.com/Race/RI/Cumberland/FITTrailFecta","True",,"Rhode Island",,,"25200"
+","Event by:  ","United States","07/01/2026 14:00:14","12/12/26","2026-12-12","Sat","Dog Friendly Trail Race","True","41.9667656","Location:  Rhode Island","-71.4328363","600","True","07/01/2026 14:00:18","Race600_12/12/26","F.I.T.mas Holiday Trail Race","recAf8CbYa04kLcZi","https://runsignup.com/Race/RI/Cumberland/FITTrailFecta","True",,"Rhode Island",,"25200"
 "Phoenix","Papago Park West Butte Trailhead ","85008","Papago Park West Butte Trailhead 
 Phoenix, Arizona 85008
 United States
 ","recARSSVflnI59u3n","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recARSSVflnI59u3n","
-","Event by:  ","United States","10/28/2026 14:04:34","01/10/27","2027-01-10","Sun","Dog Friendly Trail Race","True","33.4484367","Location:  Arizona","-112.074141","744","True","10/28/2026 14:04:41","Race744_01/10/27","Pup-A-Go 5k","recARSSVflnI59u3n","https://ultrasignup.com/register.aspx?did=142113","True",,"Arizona",,,"27000"
+","Event by:  ","United States","10/28/2026 14:04:34","01/10/27","2027-01-10","Sun","Dog Friendly Trail Race","True","33.4484367","Location:  Arizona","-112.074141","744","True","10/28/2026 14:04:41","Race744_01/10/27","Pup-A-Go 5k","recARSSVflnI59u3n","https://ultrasignup.com/register.aspx?did=142113","True",,"Arizona",,"27000"
 "Peoria","29799 N. Lake Pleasant Pkwy","85383","29799 N. Lake Pleasant Pkwy
 Peoria, Arizona 85383
 United States
 ","rec9xVhkmDKdzhPde","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=rec9xVhkmDKdzhPde","
-","Event by:  ","United States","10/28/2026 00:07:35","01/24/27","2027-01-24","Sun","Dog Friendly Trail Race","True","33.7528799","Location:  Arizona","-112.2534711","743","True","10/28/2026 00:07:44","Race743_01/24/27","Arizona Rocks! Trail Race","rec9xVhkmDKdzhPde","https://raceroster.com/events/2027/130211/arizona-rocks-half-marathon-10k-5k-trail-run","True",,"Arizona",,,
+","Event by:  ","United States","10/28/2026 00:07:35","01/24/27","2027-01-24","Sun","Dog Friendly Trail Race","True","33.7528799","Location:  Arizona","-112.2534711","743","True","10/28/2026 00:07:44","Race743_01/24/27","Arizona Rocks! Trail Race","rec9xVhkmDKdzhPde","https://raceroster.com/events/2027/130211/arizona-rocks-half-marathon-10k-5k-trail-run","True",,"Arizona",,
 "Charlotte","5000 Whitewater Center Parkway","28214","5000 Whitewater Center Parkway
 Charlotte, North Carolina 28214
 United States
 ","recKrOwqMy78S9Iec","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recKrOwqMy78S9Iec","
-","Event by:  ","United States","10/08/2026 13:22:14","02/06/27","2027-02-06","Sat","Dog Friendly Trail Race","True","35.2919581","Location:  North Carolina","-80.9846794","713","True","10/08/2026 13:22:32","Race713_02/06/27","Dog Days of Winter Dog Jog 5k and 1 mile walk","recKrOwqMy78S9Iec","https://whitewater.org/race/dog-days-of-winter-dog-jog/","True",,"North Carolina",,,"36000"
+","Event by:  ","United States","10/08/2026 13:22:14","02/06/27","2027-02-06","Sat","Dog Friendly Trail Race","True","35.2919581","Location:  North Carolina","-80.9846794","713","True","10/08/2026 13:22:32","Race713_02/06/27","Dog Days of Winter Dog Jog 5k and 1 mile walk","recKrOwqMy78S9Iec","https://whitewater.org/race/dog-days-of-winter-dog-jog/","True",,"North Carolina",,"36000"
 "Suwanee","5790 Chattahoochie Pointe Dr","30024","5790 Chattahoochie Pointe Dr
 Suwanee, Georgia 30024
 United States
 ","recTRe33vrh9eSklI","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recTRe33vrh9eSklI","
-","Event by:  ","United States","08/17/2026 20:42:17","02/07/27","2027-02-07","Sun","Canicross Race","True","34.0514898","Location:  Georgia","-84.0712997","656","True","08/17/2026 20:42:24","Race656_02/07/27","Canicross Quickie 5k","recTRe33vrh9eSklI","nacanicross.com","True",,"Georgia",,,
+","Event by:  ","United States","08/17/2026 20:42:17","02/07/27","2027-02-07","Sun","Canicross Race","True","34.0514898","Location:  Georgia","-84.0712997","656","True","08/17/2026 20:42:24","Race656_02/07/27","Canicross Quickie 5k","recTRe33vrh9eSklI","nacanicross.com","True",,"Georgia",,
 "Brighton","6301 Kensington Rd","48116","6301 Kensington Rd
 Brighton, Michigan 48116
 United States
 ","recDxD6nZVDZKBDkT","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recDxD6nZVDZKBDkT","
-","Event by:  ","United States","06/17/2026 16:17:37","02/13/27","2027-02-13","Sat","Dog Friendly Trail Race","True","42.5521355","Location:  Michigan","-83.693065","591","True","06/17/2026 16:17:54","Race591_02/13/27","Winter Trail Fest Half Marathon and 5 Mile - Eastside","recDxD6nZVDZKBDkT","https://runsignup.com/Race/MI/Brighton/WinterTrailFestEastside","True",,"Michigan",,,
+","Event by:  ","United States","06/17/2026 16:17:37","02/13/27","2027-02-13","Sat","Dog Friendly Trail Race","True","42.5521355","Location:  Michigan","-83.693065","591","True","06/17/2026 16:17:54","Race591_02/13/27","Winter Trail Fest Half Marathon and 5 Mile - Eastside","recDxD6nZVDZKBDkT","https://runsignup.com/Race/MI/Brighton/WinterTrailFestEastside","True",,"Michigan",,
 "Acworth","50 Lodge Rd SE","30102","50 Lodge Rd SE
 Acworth, Georgia 30102
 United States
 ","recOE45KhWtL9HlqL","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recOE45KhWtL9HlqL","
-","Event by:  ","United States","10/13/2026 18:41:42","03/07/27","2027-03-07","Sun","Canicross Race","True","34.0659329","Location:  Georgia","-84.6768796","722","True","10/13/2026 18:41:47","Race722_03/07/27","Race Around Red Top","recOE45KhWtL9HlqL","https://nacanicross.com/nacc-races-%26-events","True",,"Georgia",,,
+","Event by:  ","United States","10/13/2026 18:41:42","03/07/27","2027-03-07","Sun","Canicross Race","True","34.0659329","Location:  Georgia","-84.6768796","722","True","10/13/2026 18:41:47","Race722_03/07/27","Race Around Red Top","recOE45KhWtL9HlqL","https://nacanicross.com/nacc-races-%26-events","True",,"Georgia",,
 "Mill Spring","25 International Blvd","28756","25 International Blvd
 Mill Spring, North Carolina 28756
 United States
 ","recOe1GzvYeQZXSge","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recOe1GzvYeQZXSge","
-","Event by:  ","United States","10/13/2026 18:40:22","03/13/27","2027-03-13","Sat","Canine OCR","True","35.2824586","Location:  North Carolina","-82.0684059","721","True","10/13/2026 18:40:27","Race721_03/13/27","UltiMutt Race","recOe1GzvYeQZXSge","https://runsignup.com/Race/SC/Greenville/UltiMuttRace","True",,"North Carolina",,,
+","Event by:  ","United States","10/13/2026 18:40:22","03/13/27","2027-03-13","Sat","Canine OCR","True","35.2824586","Location:  North Carolina","-82.0684059","721","True","10/13/2026 18:40:27","Race721_03/13/27","UltiMutt Race","recOe1GzvYeQZXSge","https://runsignup.com/Race/SC/Greenville/UltiMuttRace","True",,"North Carolina",,
 "Cumberland ","1464 Diamond Hill Rd, Cumberland, RI 02864","02864","1464 Diamond Hill Rd, Cumberland, RI 02864
 Cumberland , Rhode Island 02864
 United States
 ","rec4nOkGxXyVLcNWP","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=rec4nOkGxXyVLcNWP","
-","Event by:  ","United States","07/01/2026 14:01:47","03/14/27","2027-03-14","Sun","Dog Friendly Trail Race","True","41.9667656","Location:  Rhode Island","-71.4328363","601","True","07/01/2026 14:01:52","Race601_03/14/27","F.I.T ‘Rock Trail Race","rec4nOkGxXyVLcNWP","https://runsignup.com/Race/RI/Cumberland/FITRockTrailRace","True",,"Rhode Island",,,"25200"
+","Event by:  ","United States","07/01/2026 14:01:47","03/14/27","2027-03-14","Sun","Dog Friendly Trail Race","True","41.9667656","Location:  Rhode Island","-71.4328363","601","True","07/01/2026 14:01:52","Race601_03/14/27","F.I.T ‘Rock Trail Race","rec4nOkGxXyVLcNWP","https://runsignup.com/Race/RI/Cumberland/FITRockTrailRace","True",,"Rhode Island",,"25200"
 "Middleburg","2A Live Oak Lane","32068","2A Live Oak Lane
 Middleburg, Florida 32068
 United States
 ","recaZl5NldUgKOJMZ","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recaZl5NldUgKOJMZ","
-","Event by:  ","United States","08/04/2026 19:27:42","04/03/27","2027-04-03","Sat","Dog Friendly Trail Race","True","30.0688512","Location:  Florida","-81.8603778","650","True","08/04/2026 19:27:56","Race650_04/03/27","Safe Animal Shelter Fundraiser Trail Run","recaZl5NldUgKOJMZ","https://ultrasignup.com/register.aspx?did=130857","True",,"Florida",,,
+","Event by:  ","United States","08/04/2026 19:27:42","04/03/27","2027-04-03","Sat","Dog Friendly Trail Race","True","30.0688512","Location:  Florida","-81.8603778","650","True","08/04/2026 19:27:56","Race650_04/03/27","Safe Animal Shelter Fundraiser Trail Run","recaZl5NldUgKOJMZ","https://ultrasignup.com/register.aspx?did=130857","True",,"Florida",,
 " Fairburn","10045 Cedar Grove Rd","30213","10045 Cedar Grove Rd
  Fairburn, Georgia 30213
 United States
 ","recCPp5oxJOTThbmL","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recCPp5oxJOTThbmL","
-","Event by:  ","United States","10/13/2026 18:43:15","04/04/27","2027-04-04","Sun","Canicross Race","True","33.5670562","Location:  Georgia","-84.5810418","723","True","10/13/2026 18:43:20","Race723_04/04/27","NACC's Triathlon","recCPp5oxJOTThbmL","https://nacanicross.com/nacc-races-%26-events","True",,"Georgia",,,
+","Event by:  ","United States","10/13/2026 18:43:15","04/04/27","2027-04-04","Sun","Canicross Race","True","33.5670562","Location:  Georgia","-84.5810418","723","True","10/13/2026 18:43:20","Race723_04/04/27","NACC's Triathlon","recCPp5oxJOTThbmL","https://nacanicross.com/nacc-races-%26-events","True",,"Georgia",,
 ,,,"1100 Pine Grove Road
 gardners, Pennsylvania 17324
 United States
 ","recWRJ0PZUM6mF4pV","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recWRJ0PZUM6mF4pV","
-","Event by:  ","United States","01/14/2026 19:27:03","04/12/27","2027-04-12","Mon","Dog Friendly Trail Race","True","40.03296585","Location:  Pennsylvania","-77.30447800503069","398","True","02/18/2026 18:12:00","Race398_04/12/27","Buck Ridge Burn 5k-ish, 10k-ish","recWRJ0PZUM6mF4pV","https://buckridgeburn.com/registration-2026","True","True","Pennsylvania",,,
+","Event by:  ","United States","01/14/2026 19:27:03","04/12/27","2027-04-12","Mon","Dog Friendly Trail Race","True","40.03296585","Location:  Pennsylvania","-77.30447800503069","398","True","02/18/2026 18:12:00","Race398_04/12/27","Buck Ridge Burn 5k-ish, 10k-ish","recWRJ0PZUM6mF4pV","https://buckridgeburn.com/registration-2026","True","True","Pennsylvania",,
 "Dillard","34°58'55.2""N 83°16'24.5""W","30537","34°58'55.2""N 83°16'24.5""W
 Dillard, Georgia 30537
 United States
 ","recLZF69u3DvIaqZb","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=recLZF69u3DvIaqZb","
-","Event by:  ","United States","06/08/2026 20:53:10","06/06/27","2027-06-06","Sun","Dog Friendly Trail Race","True","34.9700911","Location:  Georgia","-83.3871006","588","True","06/08/2026 20:53:21","Race588_06/06/27","Rabun Half Marathon","recLZF69u3DvIaqZb","https://ultrasignup.com/register.aspx?did=140061","True",,"Georgia",,"12:00","28800"
+","Event by:  ","United States","06/08/2026 20:53:10","06/06/27","2027-06-06","Sun","Dog Friendly Trail Race","True","34.9700911","Location:  Georgia","-83.3871006","588","True","06/08/2026 20:53:21","Race588_06/06/27","Rabun Half Marathon","recLZF69u3DvIaqZb","https://ultrasignup.com/register.aspx?did=140061","True",,"Georgia","12:00","28800"
 "Laingsburg","7835 E Price Rd","48848","7835 E Price Rd
 Laingsburg, Michigan 48848
 United States
 ","reciBmfpyzVU5XWcC","https://nacanicross.fillout.com/t/i7gVYy8GSWus?id=reciBmfpyzVU5XWcC","
-","Event by:  ","United States","07/31/2026 19:24:04","06/12/27","2027-06-12","Sat","Dog Friendly Trail Race","True","42.8915618","Location:  Michigan","-84.3496697","643","True","07/31/2026 19:24:34","Race643_06/12/27","Summer Trail Fest Ultra","reciBmfpyzVU5XWcC","https://runsignup.com/Race/Register/?raceId=103928","True",,"Michigan",,,
+","Event by:  ","United States","07/31/2026 19:24:04","06/12/27","2027-06-12","Sat","Dog Friendly Trail Race","True","42.8915618","Location:  Michigan","-84.3496697","643","True","07/31/2026 19:24:34","Race643_06/12/27","Summer Trail Fest Ultra","reciBmfpyzVU5XWcC","https://runsignup.com/Race/Register/?raceId=103928","True",,"Michigan",,
